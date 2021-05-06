@@ -2,629 +2,636 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
+  
   <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="740. 删除并获得点数DP三部曲1.最优子&#x2F;重复子 1dp[i] &#x3D; Math.max(dp[i - 1], dp[i - 2] + i * all[i]);   2.边界条件因为最优子方程中出现[i-2]所以在循环中i(2~size()-1) 初始化dp[0],dp[1] 123dp[0]&#x3D;0;dp[1]&#x3D;dp[1]*m[dp[1]];   3.状态转移方程分析：本题属于”打家劫舍”的变种，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="740-删除并获得点数">
-<meta property="og:url" content="http://example.com/2021/05/05/740-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="740. 删除并获得点数DP三部曲1.最优子&#x2F;重复子 1dp[i] &#x3D; Math.max(dp[i - 1], dp[i - 2] + i * all[i]);   2.边界条件因为最优子方程中出现[i-2]所以在循环中i(2~size()-1) 初始化dp[0],dp[1] 123dp[0]&#x3D;0;dp[1]&#x3D;dp[1]*m[dp[1]];   3.状态转移方程分析：本题属于”打家劫舍”的变种，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-05T15:01:20.000Z">
-<meta property="article:modified_time" content="2021-05-05T15:22:38.485Z">
 <meta property="article:author" content="leishou">
 <meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="icon" href="/img/avatar.jpg">
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-<link href="/css/style.css?v=1.1.0" rel="stylesheet">
-
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
-
-<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
-
-<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="/js/titleTip.js?v=1.1.0" ></script>
-
-<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
-<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-
-
-
-<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
-
-<script src="/js/iconfont.js?v=1.1.0" ></script>
-
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
-<div style="display: none">
-  <input class="theme_disqus_on" value="false">
-  <input class="theme_preload_comment" value="">
-  <input class="theme_blog_path" value="">
-  <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="true" />
-  <input id="theme_code_copy" value="true" />
-</div>
-
-
 
 <body>
-<aside class="nav mobile">
-    <div class="nav-left">
-        <a href="/"
-   class="avatar_target">
-    <img class="avatar"
-         src="/img/avatar.jpg"/>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-文章标题1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%981/" class="article-date">
+  <time class="dt-published" datetime="2021-05-05T17:03:27.000Z" itemprop="datePublished">2021-05-06</time>
 </a>
-<div class="author">
-    <span>leishou</span>
-</div>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%981/">文章标题1</a>
+    </h1>
+  
 
-<div class="icon">
+      </header>
     
+    <div class="e-content article-entry" itemprop="articleBody">
+      
         
-            <a title="rss"
-               href="/atom.xml"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-rss"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="github"
-               href="https://github.com/yelog"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-github"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="facebook"
-               href="https://www.facebook.com/faker.tops"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-facebook"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-    
-        
-    
-        
-            <a title="instagram"
-               href="https://www.facebook.com/faker.tops"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-instagram"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="reddit"
-               href="https://www.reddit.com/user/yelog/"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-reddit"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="weibo"
-               href="http://weibo.com/u/2307534817"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-weibo"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="jianshu"
-               href="https://www.jianshu.com/u/ff56736de7cf"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-jianshu"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="zhihu"
-               href="https://www.zhihu.com/people/jaytp/activities"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-zhihu"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-    
-        
-            <a title="oschina"
-               href="https://my.oschina.net/yelog"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-oschina"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-    
-        
-            <a title="email"
-               href="mailto:jaytp@qq.com"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-email"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="qq"
-               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-qq"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="kugou"
-               href="https://www.kugou.com/"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-kugou"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="neteasemusic"
-               href="https://music.163.com/#/user/home?id=88151013"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-neteasemusic"></use>
-                    </svg>
-                
-            </a>
-        
-    
-</div>
-
-
-
-
-<ul>
-    <li>
-        <div class="all active" data-rel="全部文章">全部文章
-            
-                <small>(9)</small>
-            
-        </div>
-    </li>
-    
-</ul>
-<div class="left-bottom">
-    <div class="menus">
-        
-            
-            
-            
+      
     </div>
-    <div>
-        
-            <a class="about  hasFriend  site_url"
-               
-               href="/about">关于</a>
-        
-        <a style="width: 50%"
-                
-                                           class="friends">友链</a>
-        
-    </div>
-</div>
-<input type="hidden" id="yelog_site_posts_number" value="9">
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%981/" data-id="ckoc4zhxu00073gt1cowi1bu7" data-title="文章标题1" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
-<div style="display: none">
-    <span id="busuanzi_value_site_uv"></span>
-    <span id="busuanzi_value_site_pv"></span>
-</div>
 
-    </div>
-    <div class="nav-right">
-        <div class="friends-area">
-    <div class="friends-title">
-        友情链接
-        <i class="iconfont icon-left"></i>
-    </div>
-    <div class="friends-content">
-        <ul>
-            
-            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
-            
-        </ul>
-    </div>
-</div>
-        <div class="title-list">
-    <div class="right-top">
-        <div id="default-panel">
-            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
-            <div class="right-title">全部文章</div>
-            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
-        </div>
-        <div id="search-panel">
-            <i class="iconfont icon-left" data-title="返回"></i>
-            <input id="local-search-input" autocomplete="off"/>
-            <label class="border-line" for="input"></label>
-            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
-            <i class="iconfont icon-tag" data-title="标签"></i>
-        </div>
-        <div id="outline-panel" style="display: none">
-            <div class="right-title">大纲</div>
-            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
-        </div>
-    </div>
 
-    <div class="tags-list">
-    <input id="tag-search" />
-    <div class="tag-wrapper">
-        
-    </div>
-
-</div>
-
+  
+    <article id="post-文章标题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2021-05-05T16:49:46.000Z" itemprop="datePublished">2021-05-06</time>
+</a>
     
-    <nav id="title-list-nav">
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-        <a  class="全部文章 "
-           href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%981/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="文章标题1">文章标题1</span>
-            <span class="post-date" title="2021-05-06 01:03:27">2021/05/06</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="文章标题">文章标题</span>
-            <span class="post-date" title="2021-05-06 00:49:46">2021/05/06</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/05/740-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="740-删除并获得点数">740-删除并获得点数</span>
-            <span class="post-date" title="2021-05-05 23:01:20">2021/05/05</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/04/%E7%AC%AC%E4%BA%8C%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="第二篇Hexo blog文章">第二篇Hexo blog文章</span>
-            <span class="post-date" title="2021-05-04 23:47:31">2021/05/04</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/04/4.4%20781%20%E6%A3%AE%E6%9E%97%E4%B8%AD%E7%9A%84%E5%85%94%E5%AD%90/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2021-05-04 11:48:45">2021/05/04</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/04/4.3%201143%20%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2021-05-04 11:48:45">2021/05/04</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/04/4.1%201006%20%E7%AC%A8%E9%98%B6%E4%B9%98/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2021-05-04 11:48:45">2021/05/04</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/04/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="第一篇Hexo blog文章">第一篇Hexo blog文章</span>
-            <span class="post-date" title="2021-05-04 00:57:49">2021/05/04</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2021/05/04/hello-world/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Hello World">Hello World</span>
-            <span class="post-date" title="2021-05-04 00:51:11">2021/05/04</span>
-        </a>
-        
-        <div id="no-item-tips">
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/">文章标题</a>
+    </h1>
+  
 
-        </div>
-    </nav>
-    <div id="outline-list">
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/" data-id="ckoc4zhxt00053gt1fpiafg8r" data-title="文章标题" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
+
+
+  
+    <article id="post-740-删除并获得点数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/05/740-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-05-05T15:01:20.000Z" itemprop="datePublished">2021-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/05/740-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/">740-删除并获得点数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="740-删除并获得点数"><a href="#740-删除并获得点数" class="headerlink" title="740. 删除并获得点数"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-and-earn/">740. 删除并获得点数</a></h4><h2 id="DP三部曲"><a href="#DP三部曲" class="headerlink" title="DP三部曲"></a>DP三部曲</h2><h3 id="1-最优子-重复子"><a href="#1-最优子-重复子" class="headerlink" title="1.最优子/重复子"></a>1.最优子/重复子</h3><blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = Math.<span class="built_in">max</span>(dp[i - <span class="number">1</span>], dp[i - <span class="number">2</span>] + i * all[i]);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<h3 id="2-边界条件"><a href="#2-边界条件" class="headerlink" title="2.边界条件"></a>2.边界条件</h3><p>因为最优子方程中出现[i-2]所以在循环中i(2~size()-1)</p>
+<p>初始化dp[0],dp[1]</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">dp[<span class="number">1</span>]=dp[<span class="number">1</span>]*m[dp[<span class="number">1</span>]];</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-状态转移方程"><a href="#3-状态转移方程" class="headerlink" title="3.状态转移方程"></a>3.状态转移方程</h3><p>分析：本题属于”打家劫舍”的变种，</p>
+<blockquote>
+<p>1.如果你不删除当前位置的数字，那么你得到就是前一个数字的位置的最优结果。<br>2.如果你觉得当前的位置数字i需要被删，那么你就会得到i - 2位置的那个最优结果加上当前位置的数字乘以个数。</p>
+<p>3.优化的话先排序，求次数存哈希</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="keyword">if</span>(dp[i]-last==<span class="number">1</span>)</span><br><span class="line">               &#123;</span><br><span class="line">                   last=dp[i];</span><br><span class="line">                   dp[i]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>],dp[i<span class="number">-2</span>]+dp[i]*m[dp[i]]);</span><br><span class="line">               &#125;</span><br><span class="line"><span class="number">2.</span> <span class="keyword">else</span></span><br><span class="line">               &#123;</span><br><span class="line">                   last=dp[i];</span><br><span class="line">                   dp[i]=dp[i<span class="number">-1</span>]+dp[i]*m[dp[i]];</span><br><span class="line">               &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="答案↓"><a href="#答案↓" class="headerlink" title="答案↓"></a>答案↓</h3><h4 id="C-版本"><a href="#C-版本" class="headerlink" title="C++版本"></a>C++版本</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteAndEarn</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">            unordered_map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;<span class="comment">//哈希统计次数</span></span><br><span class="line">            <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());<span class="comment">//从小到大排序</span></span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt;dp=&#123;<span class="number">0</span>,nums[<span class="number">0</span>]&#125;;<span class="comment">//条件边界dp[0]=0,dp[1]=nums[0]</span></span><br><span class="line">            m[nums[<span class="number">0</span>]]=<span class="number">1</span>;<span class="comment">//最小的个数必定存在默认为1</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.<span class="built_in">size</span>();++i)</span><br><span class="line">            &#123;</span><br><span class="line">                ++m[nums[i]];</span><br><span class="line">                <span class="keyword">if</span>(nums[i]!=dp.<span class="built_in">back</span>())<span class="comment">//如果原来没有，则添加到dp尾部</span></span><br><span class="line">                    dp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> last =dp[<span class="number">1</span>];<span class="comment">//下一个为dp[1]</span></span><br><span class="line">            dp[<span class="number">1</span>]=dp[<span class="number">1</span>]*m[dp[<span class="number">1</span>]];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;dp.<span class="built_in">size</span>();++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(dp[i]-last==<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    last=dp[i];</span><br><span class="line">                    dp[i]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>],dp[i<span class="number">-2</span>]+dp[i]*m[dp[i]]);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    last=dp[i];</span><br><span class="line">                    dp[i]=dp[i<span class="number">-1</span>]+dp[i]*m[dp[i]];</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> dp[dp.<span class="built_in">size</span>()<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Python3版本"><a href="#Python3版本" class="headerlink" title="Python3版本"></a>Python3版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def deleteAndEarn(self, nums: List[int]) -&gt; int:</span><br><span class="line">        cnt&#x3D;Counter(nums)#计数每个数字出现次数</span><br><span class="line">        ns&#x3D;sorted(cnt.keys())#排序数字从小到大</span><br><span class="line">        max_so_far&#x3D;cnt[ns[0]]*ns[0]#最小值*次数</span><br><span class="line">        max_except_last&#x3D;0</span><br><span class="line">        for i in range(1,len(cnt)):</span><br><span class="line">            if ns[i-1]&#x3D;&#x3D;ns[i]-1:#如果相差为</span><br><span class="line">                max_except_last,max_so_far&#x3D;max_so_far,max(max_so_far,max_except_last+cnt[ns[i]]*ns[i])</span><br><span class="line">            else:</span><br><span class="line">                    max_except_last,max_so_far&#x3D;max_so_far,max_so_far+cnt[ns[i]]*ns[i]</span><br><span class="line">        return max_so_far</span><br></pre></td></tr></table></figure>
+
+
+      
     </div>
-    <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
-            <div class="brackets first"><</div>
-            <div class="brackets">&gt;</div>
-        </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/05/740-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/" data-id="ckoc4zhxr00033gt121fpexle" data-title="740-删除并获得点数" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-第二篇Hexo-blog文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/%E7%AC%AC%E4%BA%8C%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/" class="article-date">
+  <time class="dt-published" datetime="2021-05-04T15:47:31.000Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/04/%E7%AC%AC%E4%BA%8C%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/">第二篇Hexo blog文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/%E7%AC%AC%E4%BA%8C%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/" data-id="ckoc4zhxv00083gt1hhr1cf1i" data-title="第二篇Hexo blog文章" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-4.4 781 森林中的兔子" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/4.4%20781%20%E6%A3%AE%E6%9E%97%E4%B8%AD%E7%9A%84%E5%85%94%E5%AD%90/" class="article-date">
+  <time class="dt-published" datetime="2021-05-04T03:48:45.233Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="4-4-781-森林中的兔子"><a href="#4-4-781-森林中的兔子" class="headerlink" title="4.4 781 森林中的兔子"></a>4.4 781 森林中的兔子</h1><p>贪心？</p>
+<p>哈希？</p>
+<h3 id="前面兔子和后面兔子同色"><a href="#前面兔子和后面兔子同色" class="headerlink" title="前面兔子和后面兔子同色"></a>前面兔子和后面兔子同色</h3><h3 id="前面兔子和后面兔子不同色"><a href="#前面兔子和后面兔子不同色" class="headerlink" title="前面兔子和后面兔子不同色"></a>前面兔子和后面兔子不同色</h3><hr>
+<p>贪心求最小</p>
+<p>1 →还有1个，最少2个→1（1，1相同相当于白说）2→只能不同，结果1+1+1+2</p>
+<hr>
+<p>10→还有10个，最少11个→10（10，10相同，相当于白说，贪心情况下，两者建立映射） </p>
+<p>3→还有3个，最少4个</p>
+<hr>
+<p><strong>出现的次数小于等于number 贪心为number+1</strong></p>
+<p><strong>出现的次数大于number，减去number的差再再和number比较 直到小于等于number 每次加和number+1</strong></p>
+<h3 id="发现没有考虑到0的特殊情况"><a href="#发现没有考虑到0的特殊情况" class="headerlink" title="发现没有考虑到0的特殊情况"></a>发现没有考虑到0的特殊情况</h3><p>0 0 0 0//4</p>
+<p>1 1 1 1//4</p>
+<p>1出现了4次 </p>
+<p>1最少 2=1+1</p>
+<p>1 1 最少 2 =(1个1)</p>
+<p>1 1 1最少 4（有和它对应的就不加，缺少对应，缺几个加几个）</p>
+<p>1 1 1 1最少 4</p>
+<p>2//3</p>
+<p>2 2 // 3</p>
+<p>2 2 2// 3+3 =6</p>
+<p>2 2 2 2// 3+3=6</p>
+<p>2 2 2 2 2//3+3=6</p>
+<p>红  （1）2</p>
+<p>红 （2）2</p>
+<p>红（3）2</p>
+<p>蓝（4）2 </p>
+<p>蓝（5）2</p>
+<p>蓝没说 1</p>
+<p>一共6</p>
+<p>2 2 2 2 2 2 最少</p>
+<p>红  （1）2</p>
+<p>红 （2）2</p>
+<p>红（3）2</p>
+<p>蓝（4）2 </p>
+<p>蓝（5）2</p>
+<p>蓝(6)     2</p>
+<p>一共6</p>
+<hr>
+<p>影响大小不同，排序有必要</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numRabbits</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; answers)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(answers.<span class="built_in">begin</span>(), answers.<span class="built_in">end</span>());<span class="comment">//排序影响大小不同</span></span><br><span class="line">        <span class="keyword">int</span> n = answers.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> cnt = answers[i];<span class="comment">//cnt count 数</span></span><br><span class="line">            ans += cnt + <span class="number">1</span>;<span class="comment">//</span></span><br><span class="line">            <span class="comment">// 跳过「数值 cnt」后面的 cnt 个「数值 cnt」</span></span><br><span class="line">            <span class="keyword">int</span> k = cnt;</span><br><span class="line">            <span class="comment">//前两个判断边界，后一个如果前后[1][1]相同就跳到下一个，理解有点迷</span></span><br><span class="line">            <span class="keyword">while</span> (k-- &amp;&amp; i+<span class="number">1</span> &lt; n &amp;&amp; answers[i] == answers[i+<span class="number">1</span>])</span><br><span class="line">                i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h1 id="基本分析"><a href="#基本分析" class="headerlink" title="基本分析"></a>基本分析</h1><p>首先，兔子它不会说谎 (｀・ω・´)，因此我们可以得出以下结论：</p>
+<p><strong>同一颜色的兔子回答的数值必然是一样的</strong><br><strong>但回答同样数值的，不一定就是同颜色兔子</strong><br>举个🌰，假如有 3 只白兔，每只白兔的回答必然都是 2（对应结论 1）；但假如有兔子回答了数值 2，可能只是三只白兔，也可能是三只白兔和三只灰兔同时进行了回答（对应结论 2）。</p>
+<p>答案要我们求最少的兔子数量。</p>
+<p>不妨设有某种颜色的兔子 mm 只，它们回答的答案数值为 cntcnt，那么 mm 和 cntcnt 满足什么关系？</p>
+<p>显然两者关系为 <strong>m = cnt + 1m=cnt+1。</strong></p>
+<p>但如果是在 answersanswers 数组里，回答 cntcnt 的数量为 tt 的话呢？这时候我们需要分情况讨论：</p>
+<p>t \leqslant cnt + 1t⩽cnt+1 : 为达到「最少的兔子数量」，我们可以假定这 tt 只兔子为同一颜色，这样能够满足题意，同时不会导致「额外」兔子数量增加（颜色数量最少）。<br>t &gt; cnt + 1t&gt;cnt+1 : 我们知道回答 cntcnt 的兔子应该有 cnt + 1cnt+1 只。这时候说明有数量相同的不同颜色的兔子进行了回答。为达到「最少的兔子数量」，我们应当将 tt 分为若干种颜色，并尽可能让某一种颜色的兔子为 cnt + 1cnt+1 只，这样能够满足题意，同时不会导致「额外」兔子数量增加（颜色数量最少）。<br>换句话说，我们应该让「同一颜色的兔子数量」尽量多，从而实现「总的兔子数量」最少。</p>
+<p>证明<br>我们来证明一下，为什么这样的贪心思路是对的：</p>
+<p>基于上述分析，我们其实是在处理 answersanswers 数组中每一个 cntcnt ，使得满足题意的前提下，数值 cntcnt 带来的影响（总的兔子数量，或者说总的颜色数量）最小。</p>
+<p>首先 answersanswers 中的每个数都会导致我们总的兔子数量增加，因此我们应该「让 answersanswers 的数字尽可能变少」，也就是我们需<strong>要去抵消掉 answersanswers 中的一些数字。</strong></p>
+<p>对于 answersanswers 中的某个 cntcnt 而言（注意是某个 cntcnt，含义为一只兔子的回答），必然代表了有 cnt + 1cnt+1 只兔子，同时也代表了数值 cntcnt 最多在 answersanswers 数组中出现 cnt + 1cnt+1 次（与其颜色相同的兔子都进行了回答）。</p>
+<p><strong>这时候我们可以从数组中移走 cnt + 1cnt+1 个数值 cntcnt（如果有的话）。</strong></p>
+<p>当每次处理 cntcnt 的时候，我们都执行这样的抵消操作。最后得到的 answersanswers 数值数量必然最少（而固定），抵消完成后的 answersanswers 中的每个 cntcnt 对答案的影响也固定（增加 cnt + 1cnt+1），从而实现「总的兔子数量」最少。</p>
+<p>相反，如果不执行这样的操作的话，得到的 answersanswers 数值数量必然会更多，「总的兔子数量」也必然会更多，也必然不会比这样做法更优。</p>
+<p>模拟解法<br>按照上述思路，我们可以先对 answersanswers 进行排序，然后根据遍历到某个 cntcnt 时，将其对答案的影响应用到 ansans 中（ans += cnt + 1），并将后面的 cntcnt 个 cntcnt 进行忽略。</p>
+<p>代码（感谢 @Qian 同学提供的 cpp 版本）：</p>
+<p>javac++</p>
+<p>class Solution {<br>    public int numRabbits(int[] cs) {<br>        Arrays.sort(cs);<br>        int n = cs.length;<br>        int ans = 0;<br>        for (int i = 0; i &lt; n; i++) {<br>            int cnt = cs[i];<br>            ans += cnt + 1;<br>            // 跳过「数值 cnt」后面的 cnt 个「数值 cnt」<br>            int k = cnt;<br>            while (k– &gt; 0 &amp;&amp; i + 1 &lt; n &amp;&amp; cs[i] == cs[i + 1]) i++;<br>        }<br>        return ans;<br>    }<br>}<br>时间复杂度：O(n\log{n})O(nlogn)<br>空间复杂度：O(1)O(1)<br>统计分配<br>我们也可以先对所有出现过的数字进行统计，然后再对数值进行（颜色）分配。</p>
+<p>作者：AC_OIer<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rabbits-in-forest/solution/gong-shui-san-xie-noxiang-xin-ke-xue-xi-v17p5/">https://leetcode-cn.com/problems/rabbits-in-forest/solution/gong-shui-san-xie-noxiang-xin-ke-xue-xi-v17p5/</a><br>来源：力扣（LeetCode）<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p><strong>[0,1,0,2,0,1,0,2,1,1]</strong></p>
+<p><u>//事先有排序</u></p>
+<p><strong>[0,0,0,0,1,1,1,2,2]</strong></p>
+<p><code>i=0 ans+1 1</code></p>
+<p><code>i=1 ans+1 2</code></p>
+<p><code>i=2 ans +1  3</code></p>
+<p><code>i=3  ans +1  4</code></p>
+<p><code>i=4 ans+2    6</code></p>
+<p><code>&#123;</code></p>
+<p><code>k=1;answers[4]=answers[5]</code></p>
+<p><code>i++;//i=5</code></p>
+<p><code>&#125;</code></p>
+<p><code>i=6 ans+2    8</code></p>
+<p><code>i=7 ans+3   11</code></p>
+<p><code>&#123;</code></p>
+<p><code>k=2;</code></p>
+<p><code>i+1=8&lt;10</code></p>
+<p><code>answers[7]=answers[8]</code></p>
+<p><code>i++;//i=9</code></p>
+<p><code>&#125;</code></p>
+<p><code>i=10 return ans;</code></p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numRabbits</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; answers)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line">        LL a[<span class="number">1001</span>];</span><br><span class="line">        map&lt;LL, LL&gt;m;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = answers.<span class="built_in">size</span>();</span><br><span class="line">        <span class="comment">//int arr[1000];//用来保存选用的个数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (answers[i] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ans++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            m[answers[i]]++;<span class="comment">//建立映射m[1]有2个 ，m[2]有1个</span></span><br><span class="line">           <span class="comment">/* if (!arr[i])arr[i] = answers[i];</span></span><br><span class="line"><span class="comment">            else continue;*/</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">       <span class="comment">/* for (int k = 0; k &lt; n; k++)</span></span><br><span class="line"><span class="comment">        &#123;</span></span><br><span class="line"><span class="comment">            int i = answers[k];*/</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">999</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (m[i] == <span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">//m[i]i在m中出现的次数，i是number</span></span><br><span class="line">            <span class="keyword">int</span> jud = m[i] - i;</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                ans += (i + <span class="number">1</span>);</span><br><span class="line">                jud = jud - i;</span><br><span class="line">            &#125; <span class="keyword">while</span> (jud &gt; <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LL c;</span><br><span class="line">	<span class="keyword">int</span>  ans = <span class="number">0</span>;</span><br><span class="line">    Solution a;</span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt;cs = &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span> &#125;;</span><br><span class="line">    a.<span class="built_in">numRabbits</span>(cs);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numRabbits</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; answers)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (answers.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; hash;               <span class="comment">//存储&lt;数字， 说了这个数字的兔子数量&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : answers)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!hash.<span class="built_in">count</span>(num) || hash[num] == <span class="number">0</span>) <span class="comment">//没有记录或当前数字的兔子数量为0时</span></span><br><span class="line">            &#123;</span><br><span class="line">                res += num + <span class="number">1</span>;</span><br><span class="line">                hash[num] ++ ;                      <span class="comment">//当前数字的兔子数量自增1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (hash.<span class="built_in">count</span>(num))               <span class="comment">//已有记录就继续自增</span></span><br><span class="line">                hash[num] ++ ;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (hash[num] == num + <span class="number">1</span>)           <span class="comment">//当兔子数量等于数字时，表示达到该种颜色所能代表的数量上限</span></span><br><span class="line">                hash[num] = <span class="number">0</span>;                  <span class="comment">//重置兔子数量为零，若再遇到相同数字，需要开另一种颜色来存</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：wo-yao-chu-qu-luan-shuo</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/rabbits-in-forest/solution/781-sen-lin-zhong-de-tu-zi-ha-xi-by-wo-y-mij5/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/4.4%20781%20%E6%A3%AE%E6%9E%97%E4%B8%AD%E7%9A%84%E5%85%94%E5%AD%90/" data-id="ckoc4zhxq00023gt15yu6by0k" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-4.3 1143 最长子序列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/4.3%201143%20%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97/" class="article-date">
+  <time class="dt-published" datetime="2021-05-04T03:48:45.231Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title: 每天一个linux命令</span><br></pre></td></tr></table></figure>
+
+<p>top: 1<br>categories:<br>- 运维<br>tags:<br>- linux命令</p>
+<h1 id="4-3-1143-最长子序列"><a href="#4-3-1143-最长子序列" class="headerlink" title="4.3 1143 最长子序列"></a>4.3 1143 最长子序列</h1><p>第一感觉：dp找状态方程，结果从0+或者从max-,试试单调栈</p>
+<p>如何保存每一阶段的结果</p>
+<p>解不出来，想用map/从尾部遍历，标记位置，单调栈下标还要dp找方程，迷了</p>
+<p>果然dp</p>
+<p>二维数组sharen事件</p>
+<p>cv过程中超了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">longestCommonSubsequence</span><span class="params">(string text1, string text2)</span></span></span><br><span class="line"><span class="function">     </span>&#123;</span><br><span class="line">         <span class="keyword">int</span> m = text1.<span class="built_in">length</span>();</span><br><span class="line">        <span class="keyword">int</span> n = text2.<span class="built_in">length</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">long</span>&gt;&gt;<span class="built_in">dp</span>(m + <span class="number">1</span>, vector&lt;<span class="keyword">long</span>&gt;(n + <span class="number">1</span>,<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (text1[i<span class="number">-1</span>] == text2[j<span class="number">-1</span>])dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> dp[i][j] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后返回是头还是尾比较迷</p>
+<p>PS:贴一下老张发的资料</p>
+<p><img src="file:///E:\qq文件\1581860352\Image\C2C\E44B0A441C36157D27EB1846B18C92A5.JPG" alt="img"></p>
+<p><img src="file:///E:\qq文件\1581860352\Image\C2C\63F7BED201A9326A680C2778E0EED7B0.png" alt="img"></p>
+<p><img src="file:///E:\qq文件\1581860352\Image\C2C\ECAD4A71A25CE21BD36F2975BB6FD83A.png" alt="img"></p>
+<p><img src="file:///E:\qq文件\1581860352\Image\C2C\FB2F5E112DD532FDB17E5EE9567D43C8.png" alt="img"></p>
+<p>力扣二维dp相关</p>
+<p>力扣64 1277 221 还有542 1162</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/4.3%201143%20%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97/" data-id="ckoc4zhxo00013gt1b6ptedi3" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-4.1 1006 笨阶乘" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/4.1%201006%20%E7%AC%A8%E9%98%B6%E4%B9%98/" class="article-date">
+  <time class="dt-published" datetime="2021-05-04T03:48:45.229Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>4.1 1006 笨阶乘</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">clumsy</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function">     </span>&#123;</span><br><span class="line">         stack&lt;<span class="keyword">int</span>&gt;stk;</span><br><span class="line">        <span class="keyword">int</span> jud =<span class="number">0</span>;</span><br><span class="line">        stk.<span class="built_in">push</span>(N);</span><br><span class="line">        N--;</span><br><span class="line">      <span class="keyword">while</span>(N)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">if</span>(jud%<span class="number">4</span>==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">        stk.<span class="built_in">top</span>()*=N;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(jud%<span class="number">4</span>==<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">          stk.<span class="built_in">top</span>()/=N;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(jud%<span class="number">4</span>==<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            stk.<span class="built_in">push</span>(N);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            stk.<span class="built_in">push</span>(-N);</span><br><span class="line">        &#125;</span><br><span class="line">        jud++;</span><br><span class="line">        N--;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">int</span> ans =<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span>(!stk.<span class="built_in">empty</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            ans+=stk.<span class="built_in">top</span>();</span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">      <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\15818\AppData\Roaming\Typora\typora-user-images\image-20210401125256481.png" alt="image-20210401125256481"></p>
+<p>位置不对</p>
+<p>jud ans 混淆</p>
+<p><img src="C:\Users\15818\AppData\Roaming\Typora\typora-user-images\image-20210401125331766.png" alt="image-20210401125331766"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/4.1%201006%20%E7%AC%A8%E9%98%B6%E4%B9%98/" data-id="ckoc4zhxf00003gt1eod1hs1z" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-第一篇Hexo-blog文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/" class="article-date">
+  <time class="dt-published" datetime="2021-05-03T16:57:49.000Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/04/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/">第一篇Hexo blog文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>l</p>
+<p>啦啦啦</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/%E7%AC%AC%E4%B8%80%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/" data-id="ckoc4zhxt00063gt156oq1z35" data-title="第一篇Hexo blog文章" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2021-05-03T16:51:11.848Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/04/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>ll</p>
+<p>hexo new “第二篇Hexo blog文章”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/hello-world/" data-id="ckoc4zhxs00043gt1fwz19tgr" data-title="Hello World" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%981/">文章标题1</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/06/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/">文章标题</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/05/740-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/">740-删除并获得点数</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/04/%E7%AC%AC%E4%BA%8C%E7%AF%87Hexo-blog%E6%96%87%E7%AB%A0/">第二篇Hexo blog文章</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/04/4.4%20781%20%E6%A3%AE%E6%9E%97%E4%B8%AD%E7%9A%84%E5%85%94%E5%AD%90/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
 </aside>
-<div id="post" class="index">
-    <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 leishou<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%B6%E8%90%BD%E9%98%81"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
-    
-<style>
-    .left-col .switch-btn,
-    .left-col .switch-area {
-        display: none;
-    }
-    .toc-level-3 i,
-    .toc-level-3 ol {
-        display: none !important;
-    }
-</style>
-</div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阁主（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
-
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
-    </div>
-    <div class="copyright">
-        <p class="footer-entry">
-    ©2016-2020 Yelog
-</p>
-<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
-
-    </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
-<a class="" id="rocket" ></a>
-
-</div>
-
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
 
 
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
 </body>
-<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
-
-<script src="/js/script.js?v=1.1.0" ></script>
-<script>
-    var img_resize = 'default';
-    function initArticle() {
-        /*渲染对应的表格样式*/
-        
-            $("#post .pjax table").addClass("green_title");
-        
-
-        /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
-        
-
-        /*高亮代码块行号*/
-        
-
-        /*访问数量*/
-        
-        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-        
-
-        /*代码高亮，行号对齐*/
-        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
-
-        
-        
-    }
-
-    /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
-    
-
-</script>
-
-<!--加入行号的高亮代码块样式-->
-
-<!--自定义样式设置-->
-<style>
-    
-    
-    .nav {
-        width: 542px;
-    }
-    .nav.fullscreen {
-        margin-left: -542px;
-    }
-    .nav-left {
-        width: 120px;
-    }
-    
-    
-    @media screen and (max-width: 1468px) {
-        .nav {
-            width: 492px;
-        }
-        .nav.fullscreen {
-            margin-left: -492px;
-        }
-        .nav-left {
-            width: 100px;
-        }
-    }
-    
-    
-    @media screen and (max-width: 1024px) {
-        .nav {
-            width: 492px;
-            margin-left: -492px
-        }
-        .nav.fullscreen {
-            margin-left: 0;
-        }
-    }
-    
-    @media screen and (max-width: 426px) {
-        .nav {
-            width: 100%;
-        }
-        .nav-left {
-            width: 100%;
-        }
-    }
-    
-    
-    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
-        color: #383636;
-    }
-    
-    
-    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
-        color: #5e5e5f;
-    }
-    
-    
-    .nav-right nav a.hover, #local-search-result a.hover{
-        background-color: #e2e0e0;
-    }
-    
-    
-
-    /*列表样式*/
-    
-
-    /* 背景图样式 */
-    
-    
-
-
-    /*引用块样式*/
-    
-
-    /*文章列表背景图*/
-    
-
-    
-</style>
-
-
-
-
-
-
-
 </html>
