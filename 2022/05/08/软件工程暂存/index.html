@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   
   
-  <title>ceshi | Link Start</title>
+  <title>Link Start</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="title: ceshidate: 2021-09-20 11:08:34categories:tags: andakdad 中文 可以了啊">
+  <meta name="description" content="if(Busy_Count&gt;2)     &amp;#123;          checkBusyT-&gt;stop();           &#x2F;&#x2F;弹出内容          QSystemTrayIcon* tmptrayIcon &#x3D; new QSystemTrayIcon(this);                                    &#x2F;&#x2F;设置菜单          t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ceshi">
-<meta property="og:url" content="http://example.com/2021/09/20/ceshi/index.html">
+<meta property="og:title" content="Link Start">
+<meta property="og:url" content="http://example.com/2022/05/08/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9A%82%E5%AD%98/index.html">
 <meta property="og:site_name" content="Link Start">
-<meta property="og:description" content="title: ceshidate: 2021-09-20 11:08:34categories:tags: andakdad 中文 可以了啊">
+<meta property="og:description" content="if(Busy_Count&gt;2)     &amp;#123;          checkBusyT-&gt;stop();           &#x2F;&#x2F;弹出内容          QSystemTrayIcon* tmptrayIcon &#x3D; new QSystemTrayIcon(this);                                    &#x2F;&#x2F;设置菜单          t">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-20T03:08:34.000Z">
-<meta property="article:modified_time" content="2021-09-20T03:36:57.637Z">
+<meta property="og:image" content="c:/Users/15818/AppData/Roaming/Typora/typora-user-images/image-20220415163946908.png">
+<meta property="article:published_time" content="2022-05-08T09:35:35.102Z">
+<meta property="article:modified_time" content="2022-04-19T13:20:50.655Z">
 <meta property="article:author" content="leishou">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/15818/AppData/Roaming/Typora/typora-user-images/image-20220415163946908.png">
   
     <link rel="alternate" href="/atom.xml" title="Link Start" type="application/atom+xml">
   
@@ -73,37 +75,85 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ceshi" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-软件工程暂存" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/09/20/ceshi/" class="article-date">
-  <time class="dt-published" datetime="2021-09-20T03:08:34.000Z" itemprop="datePublished">2021-09-20</time>
+    <a href="/2022/05/08/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9A%82%E5%AD%98/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:35:35.102Z" itemprop="datePublished">2022-05-08</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      ceshi
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>title: ceshi<br>date: 2021-09-20 11:08:34<br>categories:<br>tags:</p>
-<p>andakdad</p>
-<p>中文</p>
-<p>可以了啊</p>
+        <pre><code> if(Busy_Count&gt;2)
+    &#123;
+         checkBusyT-&gt;stop();
+
+         //弹出内容
+         QSystemTrayIcon* tmptrayIcon = new QSystemTrayIcon(this);
+                                   //设置菜单
+         tmptrayIcon-&gt;show();
+//         QObject::connect(tmptrayIcon,SIGNAL(activated(QSystemTrayIcon::ActivationReason)),this,SLOT(TrayIconAction(QSystemTrayIcon::ActivationReason)));//连接信号与槽，实现单击图标恢复窗口的功能，槽是自定义的槽
+
+         tmptrayIcon-&gt;showMessage(tr(&quot;勿扰中止&quot;), tr(&quot;请调整学习状态&quot;), QSystemTrayIcon::Information, 1000);
+
+    &#125;
+</code></pre>
+<pre><code>【用户故事（User Story）】
+
+作为 一个正在自习室学习的大学生
+
+ 
+我希望 能够专注于学习，尽可能减少对手机的使用
+
+以便 提高学习效率，完成自己规划的任务
+
+【验收标准】
+
+1、勿扰模式下不能接收各类消息
+2、可以手动结束，但是会再次弹窗询问确定与否
+3、在背景和音乐的处理上，尽可能让人平静
+</code></pre>
+<pre><code>【用户故事（User Story）】
+
+作为 一个正在自习室学习的大学生
+
+ 
+我希望 能够专注于学习，尽可能减少对手机的使用
+
+以便 提高学习效率，完成自己规划的任务
+
+【验收标准】
+
+1、勿扰模式下不能接收各类消息
+2、可以手动结束，但是会再次弹窗询问确定与否
+3、在背景和音乐的处理上，尽可能让人平静
+</code></pre>
+<pre><code>【用户故事（User Story）】
+
+作为 一个正在自习室学习的大学生
+
+ 
+我希望 能够专注于学习，尽可能减少对手机的使用
+
+以便 提高学习效率，完成自己规划的任务
+
+【验收标准】
+
+1、勿扰模式下不能接收各类消息
+2、可以手动结束，但是会再次弹窗询问确定与否
+3、在背景和音乐的处理上，尽可能让人平静
+</code></pre>
+<pre><code>
+</code></pre>
+<p><img src="C:\Users\15818\AppData\Roaming\Typora\typora-user-images\image-20220415163946908.png" alt="image-20220415163946908"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/20/ceshi/" data-id="cl2x3t26u0005rwt1491ico2n" data-title="ceshi" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/08/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9A%82%E5%AD%98/" data-id="cl2x3t26w0008rwt14cbybxwk" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -113,19 +163,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/05/08/0421colab%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">C++输入输出流</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>

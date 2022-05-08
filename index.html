@@ -71,6 +71,831 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-软件工程暂存" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9A%82%E5%AD%98/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:35:35.102Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code> if(Busy_Count&gt;2)
+    &#123;
+         checkBusyT-&gt;stop();
+
+         //弹出内容
+         QSystemTrayIcon* tmptrayIcon = new QSystemTrayIcon(this);
+                                   //设置菜单
+         tmptrayIcon-&gt;show();
+//         QObject::connect(tmptrayIcon,SIGNAL(activated(QSystemTrayIcon::ActivationReason)),this,SLOT(TrayIconAction(QSystemTrayIcon::ActivationReason)));//连接信号与槽，实现单击图标恢复窗口的功能，槽是自定义的槽
+
+         tmptrayIcon-&gt;showMessage(tr(&quot;勿扰中止&quot;), tr(&quot;请调整学习状态&quot;), QSystemTrayIcon::Information, 1000);
+
+    &#125;
+</code></pre>
+<pre><code>【用户故事（User Story）】
+
+作为 一个正在自习室学习的大学生
+
+ 
+我希望 能够专注于学习，尽可能减少对手机的使用
+
+以便 提高学习效率，完成自己规划的任务
+
+【验收标准】
+
+1、勿扰模式下不能接收各类消息
+2、可以手动结束，但是会再次弹窗询问确定与否
+3、在背景和音乐的处理上，尽可能让人平静
+</code></pre>
+<pre><code>【用户故事（User Story）】
+
+作为 一个正在自习室学习的大学生
+
+ 
+我希望 能够专注于学习，尽可能减少对手机的使用
+
+以便 提高学习效率，完成自己规划的任务
+
+【验收标准】
+
+1、勿扰模式下不能接收各类消息
+2、可以手动结束，但是会再次弹窗询问确定与否
+3、在背景和音乐的处理上，尽可能让人平静
+</code></pre>
+<pre><code>【用户故事（User Story）】
+
+作为 一个正在自习室学习的大学生
+
+ 
+我希望 能够专注于学习，尽可能减少对手机的使用
+
+以便 提高学习效率，完成自己规划的任务
+
+【验收标准】
+
+1、勿扰模式下不能接收各类消息
+2、可以手动结束，但是会再次弹窗询问确定与否
+3、在背景和音乐的处理上，尽可能让人平静
+</code></pre>
+<pre><code>
+</code></pre>
+<p><img src="C:\Users\15818\AppData\Roaming\Typora\typora-user-images\image-20220415163946908.png" alt="image-20220415163946908"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9A%82%E5%AD%98/" data-id="cl2x3t26w0008rwt14cbybxwk" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-0421colab训练相关" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/0421colab%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:34:50.201Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>!CUDA_VISIBLE_DEVICES=0 python trainval_net.py \</p>
+<p>​          –dataset pascal_voc \</p>
+<p>​          –net vgg16 \</p>
+<p>​          –bs 4 \</p>
+<p>​          –nw 0 \</p>
+<p>​          –lr 0.004 \</p>
+<p>​          –lr_decay_step 8 \</p>
+<p>​          –epochs 9 \</p>
+<p>​          –cuda –r true –checksession 1 –checkepoch 1 –checkpoint 2504</p>
+<pre><code>!CUDA_VISIBLE_DEVICES=0 python trainval_net.py \
+                    --dataset pascal_voc \
+                    --net vgg16 \
+                    --bs 4 \
+                    --nw 0 \
+                    --lr 0.004 \
+                    --lr_decay_step 8 \
+                    --epochs 9 \
+                    --cuda --r true --checksession 1 --checkepoch 1 --checkpoint 2504
+</code></pre>
+<pre><code>!CUDA_VISIBLE_DEVICES=0 python trainval_net.py \
+                    --dataset pascal_voc \
+                    --net vgg16 \
+                    --bs 4 \
+                    --nw 0 \
+                    --lr 0.004 \
+                    --lr_decay_step 8 \
+                    --epochs 9 \
+                    --cuda --r true --checksession 1 --checkepoch 1 --checkpoint 2504 
+</code></pre>
+<p>data 下 cache</p>
+<pre><code>Called with args:
+Namespace(batch_size=4, checkepoch=1, checkpoint=2504, checkpoint_interval=10000, checksession=1, class_agnostic=False, cuda=True, dataset=&#39;pascal_voc&#39;, disp_interval=100, large_scale=False, lr=0.004, lr_decay_gamma=0.1, lr_decay_step=8, mGPUs=False, max_epochs=9, net=&#39;vgg16&#39;, num_workers=0, optimizer=&#39;sgd&#39;, resume=True, save_dir=&#39;models&#39;, session=1, start_epoch=1, use_tfboard=False)
+Using config:
+&#123;&#39;ANCHOR_RATIOS&#39;: [0.5, 1, 2],
+ &#39;ANCHOR_SCALES&#39;: [8, 16, 32],
+ &#39;CROP_RESIZE_WITH_MAX_POOL&#39;: False,
+ &#39;CUDA&#39;: False,
+ &#39;DATA_DIR&#39;: &#39;/content/drive/MyDrive/faster-rcnn.pytorch/data&#39;,
+ &#39;DEDUP_BOXES&#39;: 0.0625,
+ &#39;EPS&#39;: 1e-14,
+ &#39;EXP_DIR&#39;: &#39;vgg16&#39;,
+ &#39;FEAT_STRIDE&#39;: [16],
+ &#39;GPU_ID&#39;: 0,
+ &#39;MATLAB&#39;: &#39;matlab&#39;,
+ &#39;MAX_NUM_GT_BOXES&#39;: 20,
+ &#39;MOBILENET&#39;: &#123;&#39;DEPTH_MULTIPLIER&#39;: 1.0,
+               &#39;FIXED_LAYERS&#39;: 5,
+               &#39;REGU_DEPTH&#39;: False,
+               &#39;WEIGHT_DECAY&#39;: 4e-05&#125;,
+ &#39;PIXEL_MEANS&#39;: array([[[102.9801, 115.9465, 122.7717]]]),
+ &#39;POOLING_MODE&#39;: &#39;align&#39;,
+ &#39;POOLING_SIZE&#39;: 7,
+ &#39;RESNET&#39;: &#123;&#39;FIXED_BLOCKS&#39;: 1, &#39;MAX_POOL&#39;: False&#125;,
+ &#39;RNG_SEED&#39;: 3,
+ &#39;ROOT_DIR&#39;: &#39;/content/drive/MyDrive/faster-rcnn.pytorch&#39;,
+ &#39;TEST&#39;: &#123;&#39;BBOX_REG&#39;: True,
+          &#39;HAS_RPN&#39;: True,
+          &#39;MAX_SIZE&#39;: 1000,
+          &#39;MODE&#39;: &#39;nms&#39;,
+          &#39;NMS&#39;: 0.3,
+          &#39;PROPOSAL_METHOD&#39;: &#39;gt&#39;,
+          &#39;RPN_MIN_SIZE&#39;: 16,
+          &#39;RPN_NMS_THRESH&#39;: 0.7,
+          &#39;RPN_POST_NMS_TOP_N&#39;: 300,
+          &#39;RPN_PRE_NMS_TOP_N&#39;: 6000,
+          &#39;RPN_TOP_N&#39;: 5000,
+          &#39;SCALES&#39;: [600],
+          &#39;SVM&#39;: False&#125;,
+ &#39;TRAIN&#39;: &#123;&#39;ASPECT_GROUPING&#39;: False,
+           &#39;BATCH_SIZE&#39;: 256,
+           &#39;BBOX_INSIDE_WEIGHTS&#39;: [1.0, 1.0, 1.0, 1.0],
+           &#39;BBOX_NORMALIZE_MEANS&#39;: [0.0, 0.0, 0.0, 0.0],
+           &#39;BBOX_NORMALIZE_STDS&#39;: [0.1, 0.1, 0.2, 0.2],
+           &#39;BBOX_NORMALIZE_TARGETS&#39;: True,
+           &#39;BBOX_NORMALIZE_TARGETS_PRECOMPUTED&#39;: True,
+           &#39;BBOX_REG&#39;: True,
+           &#39;BBOX_THRESH&#39;: 0.5,
+           &#39;BG_THRESH_HI&#39;: 0.5,
+           &#39;BG_THRESH_LO&#39;: 0.0,
+           &#39;BIAS_DECAY&#39;: False,
+           &#39;BN_TRAIN&#39;: False,
+           &#39;DISPLAY&#39;: 10,
+           &#39;DOUBLE_BIAS&#39;: True,
+           &#39;FG_FRACTION&#39;: 0.25,
+           &#39;FG_THRESH&#39;: 0.5,
+           &#39;GAMMA&#39;: 0.1,
+           &#39;HAS_RPN&#39;: True,
+           &#39;IMS_PER_BATCH&#39;: 1,
+           &#39;LEARNING_RATE&#39;: 0.01,
+           &#39;MAX_SIZE&#39;: 1000,
+           &#39;MOMENTUM&#39;: 0.9,
+           &#39;PROPOSAL_METHOD&#39;: &#39;gt&#39;,
+           &#39;RPN_BATCHSIZE&#39;: 256,
+           &#39;RPN_BBOX_INSIDE_WEIGHTS&#39;: [1.0, 1.0, 1.0, 1.0],
+           &#39;RPN_CLOBBER_POSITIVES&#39;: False,
+           &#39;RPN_FG_FRACTION&#39;: 0.5,
+           &#39;RPN_MIN_SIZE&#39;: 8,
+           &#39;RPN_NEGATIVE_OVERLAP&#39;: 0.3,
+           &#39;RPN_NMS_THRESH&#39;: 0.7,
+           &#39;RPN_POSITIVE_OVERLAP&#39;: 0.7,
+           &#39;RPN_POSITIVE_WEIGHT&#39;: -1.0,
+           &#39;RPN_POST_NMS_TOP_N&#39;: 2000,
+           &#39;RPN_PRE_NMS_TOP_N&#39;: 12000,
+           &#39;SCALES&#39;: [600],
+           &#39;SNAPSHOT_ITERS&#39;: 5000,
+           &#39;SNAPSHOT_KEPT&#39;: 3,
+           &#39;SNAPSHOT_PREFIX&#39;: &#39;res101_faster_rcnn&#39;,
+           &#39;STEPSIZE&#39;: [30000],
+           &#39;SUMMARY_INTERVAL&#39;: 180,
+           &#39;TRIM_HEIGHT&#39;: 600,
+           &#39;TRIM_WIDTH&#39;: 600,
+           &#39;TRUNCATED&#39;: False,
+           &#39;USE_ALL_GT&#39;: True,
+           &#39;USE_FLIPPED&#39;: True,
+           &#39;USE_GT&#39;: False,
+           &#39;WEIGHT_DECAY&#39;: 0.0005&#125;,
+ &#39;USE_GPU_NMS&#39;: True&#125;
+Loaded dataset `voc_2007_trainval` for training
+Set proposal method: gt
+Appending horizontally-flipped training examples...
+Traceback (most recent call last):
+  File &quot;trainval_net.py&quot;, line 197, in &lt;module&gt;
+    imdb, roidb, ratio_list, ratio_index = combined_roidb(args.imdb_name)
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 116, in combined_roidb
+    roidbs = [get_roidb(s) for s in imdb_names.split(&#39;+&#39;)]
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 116, in &lt;listcomp&gt;
+    roidbs = [get_roidb(s) for s in imdb_names.split(&#39;+&#39;)]
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 113, in get_roidb
+    roidb = get_training_roidb(imdb)
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 97, in get_training_roidb
+    imdb.append_flipped_images()
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/imdb.py&quot;, line 118, in append_flipped_images
+    boxes = self.roidb[i][&#39;boxes&#39;].copy()
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/imdb.py&quot;, line 76, in roidb
+    self._roidb = self.roidb_handler()
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/pascal_voc.py&quot;, line 132, in gt_roidb
+    for index in self.image_index]
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/pascal_voc.py&quot;, line 132, in &lt;listcomp&gt;
+    for index in self.image_index]
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/pascal_voc.py&quot;, line 211, in _load_pascal_annotation
+    tree = ET.parse(filename)
+  File &quot;/usr/lib/python3.7/xml/etree/ElementTree.py&quot;, line 1197, in parse
+    tree.parse(source, parser)
+  File &quot;/usr/lib/python3.7/xml/etree/ElementTree.py&quot;, line 598, in parse
+    self._root = parser._parse_whole(source)
+KeyboardInterrupt
+</code></pre>
+<pre><code>File &quot;trainval_net.py&quot;, line 197, in &lt;module&gt;
+    imdb, roidb, ratio_list, ratio_index = combined_roidb(args.imdb_name)
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 116, in combined_roidb
+    roidbs = [get_roidb(s) for s in imdb_names.split(&#39;+&#39;)]
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 116, in &lt;listcomp&gt;
+    roidbs = [get_roidb(s) for s in imdb_names.split(&#39;+&#39;)]
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 113, in get_roidb
+    roidb = get_training_roidb(imdb)
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/roi_data_layer/roidb.py&quot;, line 97, in get_training_roidb
+    imdb.append_flipped_images()
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/imdb.py&quot;, line 116, in append_flipped_images
+    widths = self._get_widths()
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/imdb.py&quot;, line 112, in _get_widths
+    for i in range(self.num_images)]
+  File &quot;/content/drive/MyDrive/faster-rcnn.pytorch/lib/datasets/imdb.py&quot;, line 112, in &lt;listcomp&gt;
+    for i in range(self.num_images)]
+</code></pre>
+<p>视频学习 效果   </p>
+<p>4月 给出一个讨论的结果 在4月底之前 对视频检测跑一个结果出来</p>
+<p>动态视频特征   目标动作行为语义</p>
+<p>人走在路上 突然闯入  异常行为  </p>
+<p>路口有一个车 </p>
+<p>人群里闯入一个车   游戏里模拟  </p>
+<p>用同样的数据检测一种异常   调参 参数   UCF sprot</p>
+<pre><code>!CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net vgg16 --bs 1 --nw 4  --cuda --r true --checksession 1 --checkepoch 1 --checkpoint 2504 --epochs 5
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/0421colab%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3/" data-id="cl2x3t26l0000rwt16nsrhoce" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-杂项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/%E6%9D%82%E9%A1%B9/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:34:35.714Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>数独 auto按钮对应事件有问题</p>
+<p>数独 初始化棋局 差别同源代码差异大</p>
+<p>操作系统第二题 </p>
+<p>发出请求后值未发生变化</p>
+<p>第三题</p>
+<p>小块 大块</p>
+<p>连续</p>
+<p>找到要删除的地方 变成hole</p>
+<pre><code>#ifndef BLOCK_H
+#define BLOCK_H
+#include&lt;iostream&gt;
+#include&lt;process.h&gt;
+#include &lt;memory.h&gt;
+#include&lt;memory&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+struct BlockNode &#123;
+    char val;  // 程序名
+    BlockNode* next;  // 指向下一个节点的指针
+    BlockNode();
+    BlockNode(int x) : val(x), next(NULL) &#123;&#125;  // 节点的构造函数
+    int size;//内存块大小
+    int pos;//起始位置
+&#125;;
+class BlockList &#123;
+public:
+    BlockList() &#123;
+        first = NULL;
+    &#125;
+    void init( int tmp);//初始化
+    void assign(BlockNode* q, char val, int size);
+    int ff(int tmp,char val,int size);
+    int bf(int tmp, char val, int size);
+    int wf(int tmp,char val,int size);
+    void f_assign(int tmp);
+    void Main( int tmp);
+    void showState();//查看内存状态
+    int  releaseSource(int tmp,char val,int size);//撤销进程，释放资源
+
+private:
+    BlockNode* first;
+    BlockNode* p;
+&#125;;
+BlockNode* base;
+int main()
+&#123;
+    char choice;
+    int tmp;
+    BlockList cs;
+    while (1)
+    &#123;
+        system(&quot;cls&quot;);
+        cout &lt;&lt; &quot;演示&quot; &lt;&lt;endl ;
+        cout &lt;&lt; &quot;1.静态分配 2.动态分配 3 退出程序&quot; &lt;&lt; endl;
+
+        cin &gt;&gt; choice;
+        if (choice == &#39;1&#39;)tmp = 0;
+        else if (choice == &#39;2&#39;)tmp = 1;
+        else if (choice == &#39;3&#39;)break;
+        cs.Main(tmp);
+    &#125;
+    return 0;
+&#125;
+
+void BlockList::init( int tmp)
+&#123;
+    BlockNode* p, * q;
+    if (base != NULL)
+    &#123;
+        p = base;
+        while (p)
+        &#123;
+            q = p-&gt;next;
+            delete p;
+            p = q;
+        &#125;
+    &#125;
+    base = new BlockNode;//操作系统 大小24k
+    base-&gt;pos = 0;
+    base-&gt;val = &#39;o&#39;;//代表操作系统
+    base-&gt;size = 4;//4k
+    if (tmp == 0)//静态处理
+    &#123;
+        //1
+        p = base;
+        q = new BlockNode;
+        q-&gt;pos = 4;
+        q-&gt;val = 0;
+        q-&gt;size = 20;
+        p-&gt;next = q;
+        p = q;
+        //2
+        q = new BlockNode;
+        q-&gt;pos = 24;
+        q-&gt;val = 0;
+        q-&gt;size = 40;
+        p-&gt;next = q;
+        p = q;
+        //3
+        q = new BlockNode;
+        q-&gt;pos = 64;
+        q-&gt;val = 0;
+        q-&gt;size = 50;
+        p-&gt;next = q;
+        p = q;
+        //4
+        q = new BlockNode;
+        q-&gt;pos = 124;
+        q-&gt;val = 0;
+        q-&gt;size = 30;
+        p-&gt;next = q;
+        p = q;
+
+        //5
+        q = new BlockNode;
+        q-&gt;pos = 154;
+        q-&gt;val = 0;
+        q-&gt;size = 16;
+        p-&gt;next = q;
+        p = q;
+    &#125;
+    else
+    &#123;
+        p = new BlockNode;
+        p-&gt;pos = 0;
+        p-&gt;size = 30;
+        p-&gt;next = NULL;
+        base-&gt;next = p;
+    &#125;
+&#125;
+
+void BlockList::assign(BlockNode* q, char val, int size)
+&#123;
+
+    //q 待检测的块
+    BlockNode* p = q-&gt;next;
+    BlockNode* temp = new BlockNode;
+    temp = new BlockNode;
+    temp-&gt;pos = p-&gt;pos;
+    temp-&gt;size = p-&gt;size;
+    q-&gt;next = temp;
+    if (p-&gt;size &lt; size)
+    &#123;
+        p-&gt;size = p-&gt;size - size;
+        p-&gt;pos = temp-&gt;pos + temp-&gt;size;
+        temp-&gt;next = p;
+    &#125;
+    else if(p-&gt;size=size)
+    &#123;
+        temp-&gt;next = p-&gt;next;
+        delete p;
+    &#125;
+    else
+    &#123;
+        cout &lt;&lt; &quot;无法分配！该块空间不足！&quot;;
+    &#125;
+&#125;
+
+int BlockList::ff(int tmp, char val, int size)
+&#123;
+    BlockNode* p = base;
+    BlockNode* q = p;
+    while (p)
+    &#123;
+        if (p-&gt;size &lt; size || p-&gt;val != 0)
+        &#123;
+            q = p;
+            p = p-&gt;next;
+        &#125;
+        else break;
+    &#125;
+    if (p == NULL)return 0;//未找到
+    else
+    &#123;
+        if (tmp == 0)p-&gt;val = val;//进程进驻内存
+
+        else assign(q, val, size);
+    &#125;
+    return 1;//返回1
+&#125;
+
+int BlockList::bf(int tmp, char val, int size)
+&#123;
+    BlockNode* p = base, * temp = NULL, * q = NULL, * front = NULL;
+    int min = 256;
+    while (p)
+    &#123;
+        if (p-&gt;val == 0 &amp;&amp; p-&gt;size &gt;= size &amp;&amp; min&gt;p-&gt;size)
+        &#123;
+            min = p-&gt;size;//更新最小值
+            front = q;
+            temp = p;
+        &#125;
+        q = p;
+        p = p-&gt;next;
+    &#125;
+    if (temp == NULL)return 0;//
+    else
+    &#123;
+        if (tmp == 0)temp-&gt;val = val;//静态进驻
+
+        else assign(front, val, size);
+    &#125;
+    return 1;
+&#125;
+
+int BlockList::wf(int tmp, char val, int size)
+&#123;
+    BlockNode* p = base, * temp = NULL, * q = NULL, * front = NULL;
+    int max = 0;
+    while (p)
+    &#123;
+        if (p-&gt;val == 0 &amp;&amp; p-&gt;size &gt;= size &amp;&amp; max &lt; p-&gt;size)
+        &#123;
+            max = p-&gt;size;//更新最小值
+            front = q;
+            temp = p;
+        &#125;
+        q = p;
+        p = p-&gt;next;
+    &#125;
+    if (temp == NULL)return 0;//
+    else
+    &#123;
+        if (tmp == 0)temp-&gt;val = val;//静态进驻
+
+        else assign(front, val, size);
+    &#125;
+    return 1;
+
+&#125;
+
+void BlockList::f_assign(int tmp)
+&#123;
+    int size, result = -1;
+    char chose, val;
+    cout &lt;&lt; &quot;请输入进程名:&quot;;
+    cin &gt;&gt; val;
+    cout &lt;&lt; &quot;请输入进程分配内存的大小：&quot;;
+    cin &gt;&gt; size;
+    cout &lt;&lt; &quot;请选择分配算法：1.首次 2 最佳 3 最差&quot; &lt;&lt; endl;
+    cin &gt;&gt; chose;
+    switch (chose)
+    &#123;
+    case &#39;1&#39;:
+        result = ff(chose, val, size);
+        break;
+    case &#39;2&#39;:
+        result = bf(chose, val, size);
+        break;
+    case &#39;3&#39;:
+        result = wf(chose, val, size);
+        break;
+    &#125;
+    if (result == 0)cout &lt;&lt; &quot;进程&quot; &lt;&lt; val &lt;&lt; &quot;分配失败！&quot; &lt;&lt; endl;
+    else if (result == 1)cout &lt;&lt; &quot;进程&quot; &lt;&lt; val &lt;&lt; &quot;分配成功！&quot; &lt;&lt; endl;
+    else cout &lt;&lt; &quot;非法输入！&quot; &lt;&lt; endl;
+
+&#125;
+
+void BlockList::Main(int tmp)
+&#123;
+    char choice;
+    init(tmp);
+    while (1)
+    &#123;
+        system(&quot;cls&quot;);
+        if (tmp == 0)cout &lt;&lt; &quot;\t\t\t静态分配&quot; &lt;&lt; endl;
+        else cout &lt;&lt; &quot;\t\t\t 动态分配&quot; &lt;&lt; endl;
+        showState();
+        cout &lt;&lt; &quot;请选择操作： \b 1.建立进程并分配&quot; &lt;&lt; endl;
+        cin &gt;&gt; choice;
+        if (choice == &#39;1&#39;)
+        &#123;
+            f_assign(tmp);
+            system(&quot;pause&quot;);
+        &#125;
+    &#125;
+&#125;
+
+void BlockList::showState()
+&#123;
+    BlockNode* p = base;
+    int count = 1;
+    cout &lt;&lt; &quot;内存储存情况是：&quot; &lt;&lt; endl;
+    //printf_s(&quot;块号\t 内容\t\t 大小\t 起始-结束地址\n&quot;);
+
+    while (p)
+    &#123;
+        /*printf_s(&quot; %2d  &quot;, count++);
+        printf(p-&gt;val, p-&gt;pos, p-&gt;size);*/
+        cout &lt;&lt; &quot;块号\t&quot; &lt;&lt; count &lt;&lt; &quot;内容\t\t&quot; &lt;&lt; p-&gt;val &lt;&lt; &quot;大小 \t &quot; &lt;&lt; p-&gt;size &lt;&lt; &quot; 起始-结束地址\n&quot;;
+
+        p = p-&gt;next;
+    &#125;
+&#125;
+
+int BlockList::releaseSource(int tmp, char val, int size)
+&#123;
+    BlockNode* p = base, * q = NULL;
+    while (p)
+    &#123;
+        if (p-&gt;val != val)
+        &#123;
+            q = p;
+            p = p-&gt;next;
+        &#125;
+        else break;
+    &#125;
+    if (p == NULL) return 0;//未找到
+    //q  p
+    else
+    &#123;
+        if (tmp == 0)p-&gt;val = 0;
+        else
+        &#123;
+            if (q-&gt;val!= 0)
+            &#123;    //1 前非 后非
+                if (p-&gt;next != NULL || p-&gt;next-&gt;val != 0)
+                &#123;
+                    p-&gt;val = 0;
+                &#125;
+                //2 前非 后空
+                else
+                &#123;
+                    q-&gt;next = p-&gt;next;
+                    p-&gt;next-&gt;pos = p-&gt;pos;
+                    p-&gt;next-&gt;size = p-&gt;size +p-&gt;next-&gt;size;
+
+                    delete p;
+                &#125;
+            &#125;
+            else
+            &#123;   //3 前空 后非
+                if (p-&gt;next == NULL || p-&gt;next-&gt;val != 0)
+                &#123;
+                    q-&gt;next = p-&gt;next;
+                    q-&gt;size = q-&gt;size + p-&gt;size;
+                    delete p;
+                &#125;
+                //4 前空 后空
+                else
+                &#123;
+                    q-&gt;next = p-&gt;next-&gt;next;
+                    q-&gt;size = q-&gt;size + p-&gt;size+p-&gt;next-&gt;size;
+
+                    delete p;
+                    delete p-&gt;next;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    return 1;
+&#125;
+
+#endif // BLOCK_H
+</code></pre>
+<pre><code>活动目的：
+1、让学生认识到时间的重要性，树立珍惜时间的思想意识。 
+2、培养学生的时间观念，掌握时间管理的基本方法。 
+3、提高大学生珍惜时间、利用时间的能力。
+活动具体实施方案介绍：
+（一）前期工作
+1.班级同学讨论确定班会主题
+2.征集班会素材
+3.提前租用学二组团活动室
+4.开始前半小时布置会场，调试仪器，保证其能正常使用
+5.安排班委负责拍照
+6.通知学生按时到场
+7.准备好ppt和班会讲解材料
+（二）活动内容
+1. 来给时间排个序
+选取入学至大二下为止的具有代表性的六张照片或截图，抽选同学为按照事件的发生顺序排序，勾起同学的回忆。
+照片涵盖内容：军训剪影、“大地之光”剧照、“地大隧道”、“众志成城，抗击疫情”剪影。
+2.时间的歌声里
+选取五段音频(校内生活常常能听到具有代表性)，抽选同学回答音频播放时对应的场景。
+音频包含：《勘探队员之歌》(校歌)、《光荣啊，中国共青团》（团歌）、《Going Home》(图书馆闭馆，教学楼闭楼所放歌曲)、《Only Time》（早操预备铃声）。
+这个活动作为暖身活动，用以活跃课堂气氛，提高同学们参与的积极性。
+
+3.“一分钟我们可以做什么”
+我们先来感受一下一分钟有多长。大家听我喊“开始”就闭眼，单脚站立，静听嘀哒声，一分钟 后我喊“停”再睁开眼睛。
+大家觉得这一分钟长吗？平时有这么长吗？ 
+
+
+1、    每次活动具体实施方案介绍；
+2、    班级成员对班级主题活动的评价及建议；
+3、    相关支撑材料，如活动现场照片、通讯报道、会议记录等。
+
+
+
+
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/%E6%9D%82%E9%A1%B9/" data-id="cl2x3t26v0007rwt179ledwvd" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-操作系统复习2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A02/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:34:00.948Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>操作系统复习</p>
+<p>LRU 最近未使用</p>
+<p>操作系统以扇区为单位对磁盘进行读/写操作</p>
+<p>在操作系统中,FCB是指 文件控制块</p>
+<p>磁带、磁盘这样的存储设备都是以块为单位与内存进行信息交换的。</p>
+<p>在UNIX系统中，磁盘空闲空间管理所采用的方法是（）</p>
+<p>空闲块成组链接法</p>
+<p>逻辑文件是从用户观点看的文件组织形式</p>
+<p>位示图可用于磁盘空间的管理</p>
+<p>设文件索引结点中有8个地址项，每个地址项大小为4字节，其中5个地址项为直接地址索引，2个地址项是一级间接地址索引，1个地址项是二级间接地址索引，磁盘索引块和磁盘数据块大小均为1KB。则可表示的单个文件最大长度是多少KB？</p>
+<p>解：磁盘索引块为1KB字节，每个地址项大小为4字节，故每个磁盘索引块可存放1024/4=256个物理地址块。又因为文件索引节点中有8个地址项，其中5个地址项为直接地址索引，这意味着逻辑块号为0—4的为直接地址索引；2个地址项是一级间接地址索引，这意味着第一个地址项指出的物理块中存放逻辑块号为5—260的物理块号，第二个地址项指出的物理块中存放逻辑块号为261—516的物理块号；1个地址项是二级间接地址索引，该地址项指出的物理块存放了256个间接索引表的地址，这256个间接索引表存放逻辑块号为517—66052的物理块号（256*256=65536个）。单个文件的逻辑块号范围是0—66052，而磁盘数据块大小为1KB，所以单个文件最大长度为：66053KB。<br>————————————————<br>版权声明：本文为CSDN博主「Mrchai521」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</p>
+<p><strong>独占设备。<strong><strong>任一指定的时刻</strong></strong>只能让一个****进程使用的设备。如</strong></p>
+<p><strong>打印机、磁带驱动器等</strong></p>
+<p>采用直接存取方法来读写磁盘上的物理记录时，效率最低的文件结构是连续文件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A02/" data-id="cl2x3t26u0006rwt175e87xq4" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-colab常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:32:34.426Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>import os
+os.chdir(&#39;/content/drive/MyDrive/faster-rcnn.pytorch&#39;)
+!pip install scipy==1.2.1
+</code></pre>
+<pre><code>!python demo.py --net vgg16  --checksession 1  --checkepoch 1 --checkpoint 2504 --cuda --load_dir models
+
+</code></pre>
+<pre><code>import os
+os.chdir(&#39;/content/drive/MyDrive/faster-rcnn.pytorch/lib&#39;)
+!python setup.py build develop
+</code></pre>
+<pre><code>!python setup.py build develop
+</code></pre>
+<pre><code>!apt-get install -y -qq software-properties-common python-software-properties module-init-tools
+!add-apt-repository -y ppa:alessandro-strada/ppa 2&gt;&amp;1 &gt; /dev/null
+!apt-get update -qq 2&gt;&amp;1 &gt; /dev/null
+!apt-get -y install -qq google-drive-ocamlfuse fuse
+from google.colab import auth
+auth.authenticate_user()
+from oauth2client.client import GoogleCredentials
+creds = GoogleCredentials.get_application_default()
+import getpass
+!google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125; &lt; /dev/null 2&gt;&amp;1 | grep URL
+vcode = getpass.getpass()
+!echo &#123;vcode&#125; | google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125;
+</code></pre>
+<pre><code>!pip install torch==1.5.0 torchvision
+</code></pre>
+<p>jwyang fasterrcnn 基于pytorch</p>
+<p>另一路 tensenflow</p>
+<pre><code>ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchtext 0.12.0 requires torch==1.11.0, but you have torch 1.5.0 which is incompatible.
+torchaudio 0.11.0+cu113 requires torch==1.11.0, but you have torch 1.5.0 which is incompatible.
+</code></pre>
+<pre><code>间隔多少时间
+框
+是否同一个实体
+另外一份代码
+数据集调换
+数据集 测量传入异常 作为输入
+代码调通 
+s
+</code></pre>
+<p>降级pytorch1.4</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cl2x3t26s0003rwt14r9vchlh" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-ceshi" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/09/20/ceshi/" class="article-date">
@@ -101,7 +926,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/20/ceshi/" data-id="cl2x3gmu800033ct1d7cmbv2o" data-title="ceshi" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/09/20/ceshi/" data-id="cl2x3t26u0005rwt1491ico2n" data-title="ceshi" class="article-share-link">分享</a>
       
       
       
@@ -139,7 +964,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" data-id="cl2x3gmu500013ct161bnhw2x" data-title="C++输入输出流" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" data-id="cl2x3t26r0002rwt1gxc51pvg" data-title="C++输入输出流" class="article-share-link">分享</a>
       
       
       
@@ -217,7 +1042,7 @@ public:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/06/1720-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/" data-id="cl2x3gmtz00003ct17w3adatp" data-title="1720-解码异或后的数组" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/06/1720-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/" data-id="cl2x3t26p0001rwt19ar6c9tp" data-title="1720-解码异或后的数组" class="article-share-link">分享</a>
       
       
       
@@ -270,7 +1095,7 @@ public:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/04/hello-world/" data-id="cl2x3gmu700023ct1d3q43002" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/04/hello-world/" data-id="cl2x3t26t0004rwt15azce9av" data-title="Hello World" class="article-share-link">分享</a>
       
       
       
@@ -300,7 +1125,7 @@ public:
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
     </div>
   </div>
 
@@ -313,19 +1138,23 @@ public:
       <ul>
         
           <li>
-            <a href="/2021/09/20/ceshi/">ceshi</a>
+            <a href="/2022/05/08/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9A%82%E5%AD%98/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/">C++输入输出流</a>
+            <a href="/2022/05/08/0421colab%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2021/05/06/1720-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/">1720-解码异或后的数组</a>
+            <a href="/2022/05/08/%E6%9D%82%E9%A1%B9/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2021/05/04/hello-world/">Hello World</a>
+            <a href="/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A02/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">(no title)</a>
           </li>
         
       </ul>

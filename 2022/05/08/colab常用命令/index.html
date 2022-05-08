@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>ceshi | Link Start</title>
+  <title>Link Start</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="title: ceshidate: 2021-09-20 11:08:34categories:tags: andakdad 中文 可以了啊">
+  <meta name="description" content="import os os.chdir(&#39;&#x2F;content&#x2F;drive&#x2F;MyDrive&#x2F;faster-rcnn.pytorch&#39;) !pip install scipy&#x3D;&#x3D;1.2.1  !python demo.py --net vgg16  --checksession 1  --checkepoch 1 --checkpoint 2504 --cuda --load_dir mo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ceshi">
-<meta property="og:url" content="http://example.com/2021/09/20/ceshi/index.html">
+<meta property="og:title" content="Link Start">
+<meta property="og:url" content="http://example.com/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Link Start">
-<meta property="og:description" content="title: ceshidate: 2021-09-20 11:08:34categories:tags: andakdad 中文 可以了啊">
+<meta property="og:description" content="import os os.chdir(&#39;&#x2F;content&#x2F;drive&#x2F;MyDrive&#x2F;faster-rcnn.pytorch&#39;) !pip install scipy&#x3D;&#x3D;1.2.1  !python demo.py --net vgg16  --checksession 1  --checkepoch 1 --checkpoint 2504 --cuda --load_dir mo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-20T03:08:34.000Z">
-<meta property="article:modified_time" content="2021-09-20T03:36:57.637Z">
+<meta property="article:published_time" content="2022-05-08T09:32:34.426Z">
+<meta property="article:modified_time" content="2022-05-08T09:32:16.953Z">
 <meta property="article:author" content="leishou">
 <meta name="twitter:card" content="summary">
   
@@ -73,37 +73,67 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ceshi" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-colab常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/09/20/ceshi/" class="article-date">
-  <time class="dt-published" datetime="2021-09-20T03:08:34.000Z" itemprop="datePublished">2021-09-20</time>
+    <a href="/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:32:34.426Z" itemprop="datePublished">2022-05-08</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      ceshi
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>title: ceshi<br>date: 2021-09-20 11:08:34<br>categories:<br>tags:</p>
-<p>andakdad</p>
-<p>中文</p>
-<p>可以了啊</p>
+        <pre><code>import os
+os.chdir(&#39;/content/drive/MyDrive/faster-rcnn.pytorch&#39;)
+!pip install scipy==1.2.1
+</code></pre>
+<pre><code>!python demo.py --net vgg16  --checksession 1  --checkepoch 1 --checkpoint 2504 --cuda --load_dir models
+
+</code></pre>
+<pre><code>import os
+os.chdir(&#39;/content/drive/MyDrive/faster-rcnn.pytorch/lib&#39;)
+!python setup.py build develop
+</code></pre>
+<pre><code>!python setup.py build develop
+</code></pre>
+<pre><code>!apt-get install -y -qq software-properties-common python-software-properties module-init-tools
+!add-apt-repository -y ppa:alessandro-strada/ppa 2&gt;&amp;1 &gt; /dev/null
+!apt-get update -qq 2&gt;&amp;1 &gt; /dev/null
+!apt-get -y install -qq google-drive-ocamlfuse fuse
+from google.colab import auth
+auth.authenticate_user()
+from oauth2client.client import GoogleCredentials
+creds = GoogleCredentials.get_application_default()
+import getpass
+!google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125; &lt; /dev/null 2&gt;&amp;1 | grep URL
+vcode = getpass.getpass()
+!echo &#123;vcode&#125; | google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125;
+</code></pre>
+<pre><code>!pip install torch==1.5.0 torchvision
+</code></pre>
+<p>jwyang fasterrcnn 基于pytorch</p>
+<p>另一路 tensenflow</p>
+<pre><code>ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchtext 0.12.0 requires torch==1.11.0, but you have torch 1.5.0 which is incompatible.
+torchaudio 0.11.0+cu113 requires torch==1.11.0, but you have torch 1.5.0 which is incompatible.
+</code></pre>
+<pre><code>间隔多少时间
+框
+是否同一个实体
+另外一份代码
+数据集调换
+数据集 测量传入异常 作为输入
+代码调通 
+s
+</code></pre>
+<p>降级pytorch1.4</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/20/ceshi/" data-id="cl2x3t26u0005rwt1491ico2n" data-title="ceshi" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cl2x3t26s0003rwt14r9vchlh" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -113,7 +143,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A02/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -123,9 +153,9 @@
     </a>
   
   
-    <a href="/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/09/20/ceshi/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">C++输入输出流</div>
+      <div class="article-nav-title">ceshi</div>
     </a>
   
 </nav>
