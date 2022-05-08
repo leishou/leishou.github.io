@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Link Start</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="今日蓝桥 1.子串分值和 #include&lt;iostream&gt; #include&lt;bits&#x2F;stdc++.h&gt; using namespace std; const int N&#x3D;10010; char s[N]; int dp[N]; int ptr[30]; int main() &amp;#123;     cin&gt;&gt;s+1;     long long ans&#x3D;0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Link Start">
+<meta property="og:url" content="http://example.com/2022/05/08/%E4%BB%8A%E6%97%A5%E8%93%9D%E6%A1%A5/index.html">
+<meta property="og:site_name" content="Link Start">
+<meta property="og:description" content="今日蓝桥 1.子串分值和 #include&lt;iostream&gt; #include&lt;bits&#x2F;stdc++.h&gt; using namespace std; const int N&#x3D;10010; char s[N]; int dp[N]; int ptr[30]; int main() &amp;#123;     cin&gt;&gt;s+1;     long long ans&#x3D;0">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-08T09:41:55.331Z">
+<meta property="article:modified_time" content="2022-05-08T09:41:24.010Z">
+<meta property="article:author" content="leishou">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Link Start" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Link Start</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">刹那永恒</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-今日蓝桥" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/%E4%BB%8A%E6%97%A5%E8%93%9D%E6%A1%A5/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:41:55.331Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今日蓝桥</p>
+<p>1.子串分值和</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=10010;
+char s[N];
+int dp[N];
+int ptr[30];
+int main()
+&#123;
+    cin&gt;&gt;s+1;
+    long long ans=0;
+    int len=strlen(s+1);
+    for(int i=1;i&lt;=len;i++)
+    &#123;
+        int t=s[i]-&#39;a&#39;;
+        dp[i]=dp[i-1]+i-ptr[t];
+        ptr[t]=i;
+        ans+=dp[i];
+    &#125;
+    cout&lt;&lt;ans;
+    return 0;
+&#125;
+</code></pre>
+<p>上有问题 </p>
+<p>卡片</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=10;
+int a[N];
+int main()
+&#123;
+    for(int i=0;i&lt;10;i++)
+    a[i]=2021;
+    
+    int cnt=1;
+    while(true)
+    &#123;
+        int x=cnt;
+        while(x)
+        &#123;
+            if(a[x%10]&gt;0)
+            a[x%10]--;
+            else
+            &#123;
+                cout&lt;&lt;cnt-1&lt;&lt;endl;
+                return 0;
+            &#125;
+            x/=10;
+        &#125;
+        cnt++;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p>直线</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;map&gt;
+#include&lt;utility&gt;
+using namespace std;
+const int X=20,Y=21;
+int main()
+&#123;
+    vector&lt;pair&lt;int,int&gt; &gt;vec;
+    for(int i=0;i&lt;X;i++)
+    for(int j=0;j&lt;Y;j++)
+    vec.push_back(&#123;i,j&#125;);
+    
+    map&lt;pair&lt;double,double&gt;,bool&gt;ma;
+    for(int i=0;i&lt;vec.size();i++)
+    for(int j=i+1;j&lt;vec.size();j++)
+    &#123;
+        
+        int x1=vec[i].first,x2=vec[j].first;
+        int y1=vec[i].second,y2=vec[j].second;
+        if(x1!=x2&amp;&amp;y1!=y2)&#123;
+            double k,b;
+            k= double(y2-y1)/(x2-x1);
+            b=double(x1*y2-x2*y1)/(x1-x2);
+            ma[&#123;k,b&#125;]=true;
+        &#125;
+    &#125;
+    cout&lt;&lt;ma.size()+X+Y&lt;&lt;endl;
+    return 0;
+ &#125; 
+</code></pre>
+<p>货物摆放</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+typedef long long LL;
+const LL NUM=2021041820210418;
+int main()
+&#123;
+vector&lt;LL&gt;vec;
+
+for(LL i=1;i&lt;=NUM/i;i++)
+if(NUM%i==0)
+&#123;
+    vec.push_back(i);
+    if(i!=NUM/i)vec.push_back(NUM/i);
+&#125;
+LL ans=0;
+for(LL i=0;i&lt;vec.size();i++)
+for(LL j=0;j&lt;vec.size();j++)
+for(LL k=0;k&lt;vec.size();k++)
+if(vec[i]*vec[j]*vec[k]==NUM)
+ans++;
+cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+ &#125; 
+</code></pre>
+<pre><code>int gcd(int a, int b)
+&#123;
+return b?gcd(b,a%b):a;
+&#125;
+int stimes(int a ,int b)
+&#123;
+return a*b/gcd(a,b);
+&#125;
+</code></pre>
+<p>路径 dijkstra()</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+int gcd(int a,int b)
+&#123;
+    return b?gcd(b,a%b):a;
+&#125;
+int stimes(int a,int b)
+&#123;
+    return a*b/gcd(a,b);
+&#125;
+const int N=2022,M=22;
+int g[N][N],dist[N];
+bool st[N];
+void dijkstra()
+&#123;
+    dist[1]=0;
+    for(int i=1;i&lt;N;i++)
+    &#123;
+        int t=-1;
+    for(int j=1;j&lt;N;j++)
+    if(!st[j]&amp;&amp;(t==-1||dist[j]&lt;dist[t]))
+    t=j;
+    st[t]=true;
+    
+    for(int j=1;j&lt;N;j++)
+    dist[j]=min(dist[j],dist[t]+g[t][j]);
+&#125;
+
+&#125;
+int main()
+&#123;
+    memset(dist,0x3f,sizeof dist);
+    memset(g,0x3f,sizeof g);
+    
+    for(int i=1;i&lt;N;i++)
+    for(int j=i+1;j&lt;N&amp;&amp;j-i&lt;M;j++)
+    g[i][j]=g[j][i]=stimes(i,j);
+    
+    dijkstra();
+    
+    cout&lt;&lt;dist[2021]&lt;&lt;endl;
+    return 0;
+&#125;
+</code></pre>
+<p>回路计数</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+const int N=22,M=1&lt;&lt;N;
+int gcd(int a,int b)
+&#123;
+    return b?gcd(b,a%b):a;
+&#125;
+bool g[N][N];
+long long f[M][N];
+
+int main()
+&#123;
+    for(int i=1;i&lt;N;i++)
+    for(int j=1;j&lt;N;j++)
+    if(gcd(i,j)==1)
+    g[i][j]=true;
+    
+    f[2][1]=1;
+    for(int i=1;i&lt;=M-2;i++)//遍历 
+    for(int j=1;j&lt;N;j++)//到达的点 
+    if(i&gt;&gt;j&amp;1)
+    for(int k=1;k&lt;N;k++)
+    if(g[k][j]&amp;&amp;i-(1&lt;&lt;j)&gt;&gt;k&amp;1) 
+    f[i][j]+=f[i-(1&lt;&lt;j)][k];
+    
+    long long ans=0;
+    for(int i=1;i&lt;N;i++)
+    ans+=f[M-2][i];
+    
+    cout&lt;&lt;ans&lt;&lt;endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<p>砝码称重</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int dp[105][100000];
+int n,w[105],sum,ans;
+int main()&#123;
+cin&gt;&gt;n;
+
+for(int i=1;i&lt;=n;i++)
+&#123;
+
+cin&gt;&gt;w[i];
+sum+=w[i];
+&#125;
+dp[0][0]=1;
+for(int i=1;i&lt;=n;i++)&#123;
+for(int j=0;j&lt;=sum;j++)&#123;
+dp[i][j]=max(dp[i-1][j],max(dp[i-1][j+w[i]],dp[i-1][abs(j-w[i])]));
+
+&#125;
+&#125;
+for(int i=1;i&lt;=sum;i++)&#123;
+if(dp[n][i])
+ans++;
+
+&#125;
+
+cout&lt;&lt;ans;
+return 0;
+&#125;
+</code></pre>
+<p>左孩子 右兄弟</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+const int maxn=10052;
+int fa[maxn],n;
+vector&lt;int&gt;u[maxn];
+
+int dfs(int x)&#123;
+    int ret=1;
+    
+    for(int i=0;i&lt;u[x].size();i++)
+    &#123;
+        int temp =1+dfs(u[x][i])+u[x].size()-1;
+        ret =max(temp,ret);
+    &#125;
+    return ret;
+&#125;
+int main()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n-1;i++)
+    &#123;
+        cin&gt;&gt;fa[i];
+        u[fa[i]].push_back(i+2);
+    &#125;
+    cout&lt;&lt;dfs(1)-1&lt;&lt;endl;
+    return 0;
+&#125;
+</code></pre>
+<p>模拟</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;queue&gt;
+
+using namespace std;
+bool visit[2021] = &#123; true &#125;;
+
+int main()
+&#123;
+    queue&lt;int&gt;cs;
+    cs.push(2021);
+    int time = 0;
+    while (!cs.empty())
+    &#123;
+        int size = cs.size();
+        while (size-- &gt; 0)
+        &#123;
+            int cur = cs.front();
+            cs.pop();
+            if (cur == 1)
+            &#123;
+                cout &lt;&lt; time;
+                return 0;
+            &#125;
+            if (!visit[cur + 1])
+            &#123;
+                visit[cur + 1] = true;
+                cs.push(cur + 1);
+            &#125;
+            if (!visit[cur - 1])
+            &#123;
+                visit[cur - 1] = true;
+                cs.push(cur - 1);
+            &#125;
+            if (cur % 2 == 0 &amp;&amp; !visit[cur / 2])
+            &#123;
+                visit[cur / 2] = true;
+                cs.push(cur / 2);
+            &#125;
+
+        &#125;
+        time++;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+
+int main()
+&#123;
+    int n;
+    cin &gt;&gt; n;
+    vector&lt;vector&lt;int&gt; &gt;res(n, vector&lt;int&gt;(n, 0));
+    int dx[4] = &#123; 0,1,0,-1 &#125;, dy[4] = &#123; 1,0,-1,0 &#125;;
+    int x = 0, y = 0;
+    for (int i = 1, d = 0; i &lt;= n * n; i++)
+    &#123;
+        res[x][y] = i;
+        int a = x + dx[d], b = y + dy[d];
+        if (a &lt; 0 || a == n || b &lt; 0 || b == n || res[a][b])
+        &#123;
+            d = (d + 1) % 4;
+            a = x + dx[d], b = y + dy[d];
+        &#125;
+        x = a, y = b;
+
+    &#125;
+
+    cout &lt;&lt; res[19][19];
+    return 0;
+&#125;
+</code></pre>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+
+int main()
+&#123;
+    int n;
+    cin &gt;&gt; n;
+    vector&lt;vector&lt;int&gt; &gt;res(n, vector&lt;int&gt;(n, 0));
+    int dx[4] = &#123; 0,1,0,-1 &#125;, dy[4] = &#123; 1,0,-1,0 &#125;;
+    int x = 0, y = 0;
+    for (int i = 1, d = 0; i &lt;= n * n; i++)
+    &#123;
+        res[x][y] = i;
+        int a = x + dx[d], b = y + dy[d];
+        if (a &lt; 0 || a == n || b &lt; 0 || b == n || res[a][b])
+        &#123;
+            d = (d + 1) % 4;
+            a = x + dx[d], b = y + dy[d];
+        &#125;
+        x = a, y = b;
+
+    &#125;
+
+    cout &lt;&lt; res[19][19];
+    return 0;
+&#125;
+</code></pre>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;bits/stdc++.h&gt;
+typedef  long long LL;
+using namespace std;
+const int N=1000000+10;
+int arr[N];
+void cal(LL n)
+&#123;
+    for(LL i=1;i&lt;=sqrt(n);i++)&#123;
+        if(n%i==0)&#123;
+            arr[i]++;
+            if(n!=i*i)&#123;
+                arr[n/i]++;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+int main()
+&#123;
+    LL a,b,c;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+    cal(a);
+    cal(b);
+    cal(c);
+    int ans=0;
+    for(int i=0;i&lt;=N;i++)&#123;
+        if(arr[i]&gt;=2)&#123;
+            cout&lt;&lt;i&lt;&lt;&#39; &#39;;
+            ans++;
+        &#125;
+    &#125;
+    cout&lt;&lt;endl;
+    cout&lt;&lt;ans&lt;&lt;endl;
+ &#125; 
+</code></pre>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+char a[105][105],b[105][105];
+int n,m,r,c;
+bool check(int x,int y)&#123;
+    for(int i=0;i&lt;r;i++)
+    &#123;
+        for(int j=0;j&lt;c;j++)&#123;
+            if(b[i][j]==&#39;1&#39;&amp;&amp;a[x+i][y+j]==&#39;1&#39;||b[i][j]==&#39;0&#39;)
+            continue;
+            else return false;
+        &#125;
+    &#125;
+    return true;
+    &#125;
+
+int main()
+&#123;
+    int flag=0;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=0;i&lt;n;i++)
+    cin&gt;&gt;a[i];
+    
+    cin&gt;&gt;r&gt;&gt;c;
+    for(int i=0;i&lt;r;i++)
+    cin&gt;&gt;b[i];
+    if(r&gt;n||r&gt;m||c&gt;m||c&gt;n)
+    &#123;
+        cout&lt;&lt;&quot;NO&quot;;
+        return 0;
+    &#125;
+    for(int i=0;i&lt;=n-r;i++)
+    for(int j=0;j&lt;=m-c;j++)&#123;
+        if(check(i,j))&#123;
+            cout&lt;&lt;i+1&lt;&lt;&quot; &quot;&lt;&lt;j+1;
+            return 0;
+        &#125;
+    &#125;
+    if(!flag)cout&lt;&lt;&quot;NO&quot;;
+    return 0;
+&#125;
+</code></pre>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=20;
+char ans[N];
+int main()
+&#123;
+    string s;
+    cin&gt;&gt;s;
+    int idx=0;
+    
+    for(int i=0;s[i];i++)&#123;
+        if(s[i]!=&#39;,&#39;)&#123;
+            ans[idx++]=s[i];
+        &#125;
+    &#125;
+    cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+&#125;
+</code></pre>
+<p>先赋值再++</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/%E4%BB%8A%E6%97%A5%E8%93%9D%E6%A1%A5/" data-id="cl2x411s100089ct11hzv82h0" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/08/%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/08/%E5%AE%9E%E4%B9%A0%E4%BA%8C%20%E5%8F%82%E7%85%A7%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/08/%E4%B8%80%EF%BC%9A%E7%BB%84%E9%98%9F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/08/111202%20%E4%B8%BB%E9%A2%98%E7%8F%AD%E4%BC%9A/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/08/0322%E6%95%B0%E6%8D%AE%E5%BA%93/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/08/%E7%8F%AD%E4%BC%9A/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 leishou<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

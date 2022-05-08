@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>ceshi | Link Start</title>
+  <title>Link Start</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="title: ceshidate: 2021-09-20 11:08:34categories:tags: andakdad 中文 可以了啊">
+  <meta name="description" content="实习二 参照博客 https:&#x2F;&#x2F;www.writebug.com&#x2F;git&#x2F;Badguy&#x2F;sudoku-game   Qt  https:&#x2F;&#x2F;m.bilibili.com&#x2F;video&#x2F;av891293761 视频解释 https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;69737736  知乎 python       路线 1、把数独问题转换为精确覆盖问题   √  2、设计出数据矩阵">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ceshi">
-<meta property="og:url" content="http://example.com/2021/09/20/ceshi/index.html">
+<meta property="og:title" content="Link Start">
+<meta property="og:url" content="http://example.com/2022/05/08/%E5%AE%9E%E4%B9%A0%E4%BA%8C%20%E5%8F%82%E7%85%A7%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Link Start">
-<meta property="og:description" content="title: ceshidate: 2021-09-20 11:08:34categories:tags: andakdad 中文 可以了啊">
+<meta property="og:description" content="实习二 参照博客 https:&#x2F;&#x2F;www.writebug.com&#x2F;git&#x2F;Badguy&#x2F;sudoku-game   Qt  https:&#x2F;&#x2F;m.bilibili.com&#x2F;video&#x2F;av891293761 视频解释 https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;69737736  知乎 python       路线 1、把数独问题转换为精确覆盖问题   √  2、设计出数据矩阵">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-20T03:08:34.000Z">
-<meta property="article:modified_time" content="2021-09-20T03:36:57.637Z">
+<meta property="article:published_time" content="2022-05-08T09:40:53.795Z">
+<meta property="article:modified_time" content="2022-04-13T08:49:06.175Z">
 <meta property="article:author" content="leishou">
 <meta name="twitter:card" content="summary">
   
@@ -73,37 +73,105 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ceshi" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-实习二 参照博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/09/20/ceshi/" class="article-date">
-  <time class="dt-published" datetime="2021-09-20T03:08:34.000Z" itemprop="datePublished">2021-09-20</time>
+    <a href="/2022/05/08/%E5%AE%9E%E4%B9%A0%E4%BA%8C%20%E5%8F%82%E7%85%A7%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:40:53.795Z" itemprop="datePublished">2022-05-08</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      ceshi
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>title: ceshi<br>date: 2021-09-20 11:08:34<br>categories:<br>tags:</p>
-<p>andakdad</p>
-<p>中文</p>
-<p>可以了啊</p>
+        <p>实习二 参照博客</p>
+<pre><code>https://www.writebug.com/git/Badguy/sudoku-game   Qt 
+https://m.bilibili.com/video/av891293761 视频解释
+https://zhuanlan.zhihu.com/p/69737736  知乎 python
+ 
+
+
+
+</code></pre>
+<p>路线</p>
+<pre><code>1、把数独问题转换为精确覆盖问题   √
+
+2、设计出数据矩阵                
+
+3、用舞蹈链（Dancing Links）算法求解该精确覆盖问题
+
+4、把该精确覆盖问题的解转换为数独的解
+
+</code></pre>
+<pre><code>约束条件：
+阵的每个列都定义成一个约束条件
+1、每个格子只能填一个数字
+
+2、每行1-9的这9个数字都得填一遍（也就意味着每个数字只能填一遍）
+
+3、每列1-9的这9个数字都得填一遍
+
+4、每宫1-9的这9个数字都得填一遍
+</code></pre>
+<pre><code>那接下来，就是把数独转换为矩阵
+
+数独问题中，每个格子分两种情况。有数字的格子、没数字的格子。
+</code></pre>
+<pre><code>有数字的格子
+
+以例子来说明，在（4，2）中填的是7
+
+把（4，2）中填的是7，解释成4个约束条件
+
+1、在（4，2）中填了一个数字。
+
+2、在第4行填了数字7
+
+3、在第2列填了数字7
+
+4、在第4宫填了数字7（坐标（X，Y）到宫N的公式为：N=INT（（X-1）/3）×3+INT（（Y-1）/3）+1）
+
+ 
+
+那么这4个条件，分别转换成矩阵对应的列为
+
+1、在（4，2）中填了一个数字。对应的列N=（4-1）×9+2=29
+
+2、在第4行填了数字7。对应的列N=（4-1）×9+7+81=115
+
+3、在第2列填了数字7。对应的列N=（2-1）×9+7+162=178
+
+4、在第4宫填了数字7。对应的列N=（4-1）×9+7+243=277
+
+ 
+
+于是，（4，2）中填的是7，转成矩阵的一行就是，第29、115、178、277列是1，其余列是0。把这1行插入到矩阵中去。
+————————————————
+版权声明：本文为CSDN博主「PeterBishop0」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_40061421/article/details/85677346
+</code></pre>
+<pre><code>init(); //初始化
+change();//每一步的改变   更新矩阵
+show();//显示，刷新输出
+re_last();//返回到上次  
+change的值要保存  50步撤销  栈堆cun&#39;sh
+again();//重构
+</code></pre>
+<pre><code>棋盘所需
+init
+clear
+new 新建
+check 检测
+checkVal  值？
+finished 查完全
+</code></pre>
+<p>先复刻 再改值</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/20/ceshi/" data-id="cl2x411rz00069ct12xapfjef" data-title="ceshi" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/08/%E5%AE%9E%E4%B9%A0%E4%BA%8C%20%E5%8F%82%E7%85%A7%E5%8D%9A%E5%AE%A2/" data-id="cl2x411s200099ct1dtn0085n" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -113,7 +181,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/05/08/%E4%BB%8A%E6%97%A5%E8%93%9D%E6%A1%A5/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -123,9 +191,9 @@
     </a>
   
   
-    <a href="/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/05/08/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9A%82%E5%AD%98/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">C++输入输出流</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>

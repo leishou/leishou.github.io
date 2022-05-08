@@ -6,15 +6,11 @@
   
   <title>Link Start</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="数独 auto按钮对应事件有问题 数独 初始化棋局 差别同源代码差异大 操作系统第二题  发出请求后值未发生变化 第三题 小块 大块 连续 找到要删除的地方 变成hole #ifndef BLOCK_H #define BLOCK_H #include&lt;iostream&gt; #include&lt;process.h&gt; #include &lt;memory.h&gt; #incl">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Link Start">
-<meta property="og:url" content="http://example.com/2022/05/08/%E6%9D%82%E9%A1%B9/index.html">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Link Start">
-<meta property="og:description" content="数独 auto按钮对应事件有问题 数独 初始化棋局 差别同源代码差异大 操作系统第二题  发出请求后值未发生变化 第三题 小块 大块 连续 找到要删除的地方 变成hole #ifndef BLOCK_H #define BLOCK_H #include&lt;iostream&gt; #include&lt;process.h&gt; #include &lt;memory.h&gt; #incl">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-08T09:34:35.714Z">
-<meta property="article:modified_time" content="2022-04-25T00:34:08.831Z">
 <meta property="article:author" content="leishou">
 <meta name="twitter:card" content="summary">
   
@@ -73,7 +69,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-杂项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main">
+  
+    <article id="post-杂项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/08/%E6%9D%82%E9%A1%B9/" class="article-date">
   <time class="dt-published" datetime="2022-05-08T09:34:35.714Z" itemprop="datePublished">2022-05-08</time>
@@ -488,29 +486,342 @@ int BlockList::releaseSource(int tmp, char val, int size)
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2022/05/08/0421colab%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A02/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title"></div>
-    </a>
-  
-</nav>
+</article>
 
+
+
+  
+    <article id="post-操作系统复习2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A02/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:34:00.948Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>操作系统复习</p>
+<p>LRU 最近未使用</p>
+<p>操作系统以扇区为单位对磁盘进行读/写操作</p>
+<p>在操作系统中,FCB是指 文件控制块</p>
+<p>磁带、磁盘这样的存储设备都是以块为单位与内存进行信息交换的。</p>
+<p>在UNIX系统中，磁盘空闲空间管理所采用的方法是（）</p>
+<p>空闲块成组链接法</p>
+<p>逻辑文件是从用户观点看的文件组织形式</p>
+<p>位示图可用于磁盘空间的管理</p>
+<p>设文件索引结点中有8个地址项，每个地址项大小为4字节，其中5个地址项为直接地址索引，2个地址项是一级间接地址索引，1个地址项是二级间接地址索引，磁盘索引块和磁盘数据块大小均为1KB。则可表示的单个文件最大长度是多少KB？</p>
+<p>解：磁盘索引块为1KB字节，每个地址项大小为4字节，故每个磁盘索引块可存放1024/4=256个物理地址块。又因为文件索引节点中有8个地址项，其中5个地址项为直接地址索引，这意味着逻辑块号为0—4的为直接地址索引；2个地址项是一级间接地址索引，这意味着第一个地址项指出的物理块中存放逻辑块号为5—260的物理块号，第二个地址项指出的物理块中存放逻辑块号为261—516的物理块号；1个地址项是二级间接地址索引，该地址项指出的物理块存放了256个间接索引表的地址，这256个间接索引表存放逻辑块号为517—66052的物理块号（256*256=65536个）。单个文件的逻辑块号范围是0—66052，而磁盘数据块大小为1KB，所以单个文件最大长度为：66053KB。<br>————————————————<br>版权声明：本文为CSDN博主「Mrchai521」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</p>
+<p><strong>独占设备。<strong><strong>任一指定的时刻</strong></strong>只能让一个****进程使用的设备。如</strong></p>
+<p><strong>打印机、磁带驱动器等</strong></p>
+<p>采用直接存取方法来读写磁盘上的物理记录时，效率最低的文件结构是连续文件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A02/" data-id="cl2x411s5000b9ct14zibgjdw" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
   
 </article>
 
+
+
+  
+    <article id="post-colab常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2022-05-08T09:32:34.426Z" itemprop="datePublished">2022-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <pre><code>import os
+os.chdir(&#39;/content/drive/MyDrive/faster-rcnn.pytorch&#39;)
+!pip install scipy==1.2.1
+</code></pre>
+<pre><code>!python demo.py --net vgg16  --checksession 1  --checkepoch 1 --checkpoint 2504 --cuda --load_dir models
+
+</code></pre>
+<pre><code>import os
+os.chdir(&#39;/content/drive/MyDrive/faster-rcnn.pytorch/lib&#39;)
+!python setup.py build develop
+</code></pre>
+<pre><code>!python setup.py build develop
+</code></pre>
+<pre><code>!apt-get install -y -qq software-properties-common python-software-properties module-init-tools
+!add-apt-repository -y ppa:alessandro-strada/ppa 2&gt;&amp;1 &gt; /dev/null
+!apt-get update -qq 2&gt;&amp;1 &gt; /dev/null
+!apt-get -y install -qq google-drive-ocamlfuse fuse
+from google.colab import auth
+auth.authenticate_user()
+from oauth2client.client import GoogleCredentials
+creds = GoogleCredentials.get_application_default()
+import getpass
+!google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125; &lt; /dev/null 2&gt;&amp;1 | grep URL
+vcode = getpass.getpass()
+!echo &#123;vcode&#125; | google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125;
+</code></pre>
+<pre><code>!pip install torch==1.5.0 torchvision
+</code></pre>
+<p>jwyang fasterrcnn 基于pytorch</p>
+<p>另一路 tensenflow</p>
+<pre><code>ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchtext 0.12.0 requires torch==1.11.0, but you have torch 1.5.0 which is incompatible.
+torchaudio 0.11.0+cu113 requires torch==1.11.0, but you have torch 1.5.0 which is incompatible.
+</code></pre>
+<pre><code>间隔多少时间
+框
+是否同一个实体
+另外一份代码
+数据集调换
+数据集 测量传入异常 作为输入
+代码调通 
+s
+</code></pre>
+<p>降级pytorch1.4</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/08/colab%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cl2x411rz00059ct1bbsm22tx" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ceshi" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/20/ceshi/" class="article-date">
+  <time class="dt-published" datetime="2021-09-20T03:08:34.000Z" itemprop="datePublished">2021-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/20/ceshi/">ceshi</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>title: ceshi<br>date: 2021-09-20 11:08:34<br>categories:<br>tags:</p>
+<p>andakdad</p>
+<p>中文</p>
+<p>可以了啊</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/20/ceshi/" data-id="cl2x411rz00069ct12xapfjef" data-title="ceshi" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-C-输入输出流" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" class="article-date">
+  <time class="dt-published" datetime="2021-05-06T15:26:39.000Z" itemprop="datePublished">2021-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/">C++输入输出流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/06/C-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" data-id="cl2x411rr00049ct1c37edn7h" data-title="C++输入输出流" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-1720-解码异或后的数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/06/1720-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/" class="article-date">
+  <time class="dt-published" datetime="2021-05-06T00:49:42.000Z" itemprop="datePublished">2021-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/06/1720-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/">1720-解码异或后的数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="1720-解码异或后的数组"><a href="#1720-解码异或后的数组" class="headerlink" title="1720. 解码异或后的数组"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/decode-xored-array/">1720. 解码异或后的数组</a></h4><h1 id="异或-性质-a-b"><a href="#异或-性质-a-b" class="headerlink" title="异或^性质(a^b)"></a>异或^性质(a^b)</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h2><blockquote>
+<p>a^a=0,a^0=a    //针对位数</p>
+</blockquote>
+<h2 id="2-交换律·"><a href="#2-交换律·" class="headerlink" title="2.交换律·"></a>2.交换律·</h2><blockquote>
+<p>a^b = b^a</p>
+</blockquote>
+<h3 id="3-结合律"><a href="#3-结合律" class="headerlink" title="3.结合律"></a>3.结合律</h3><blockquote>
+<p>(a^b)^c=a^(b^c)</p>
+</blockquote>
+<h3 id="4-衍生-”-“"><a href="#4-衍生-”-“" class="headerlink" title="4.衍生-”==“"></a>4.衍生-”==“</h3><blockquote>
+<p>a^c==b^c</p>
+<p>a==b</p>
+</blockquote>
+<h3 id="5-swap函数原理"><a href="#5-swap函数原理" class="headerlink" title="5.swap函数原理"></a>5.swap函数原理</h3><pre><code class="c++">void swap (int a int b)&#123;
+    //a =2 b=1
+a=a^b;//(1)a 10   b 01
+b=a^b;//(2)a 11  b10
+a=a^b;//(3)a 01
+&#125;
+</code></pre>
+<hr>
+<h3 id="答案↓"><a href="#答案↓" class="headerlink" title="答案↓"></a>答案↓</h3><h4 id="C-版本"><a href="#C-版本" class="headerlink" title="C++版本"></a>C++版本</h4><pre><code class="c++">class Solution &#123;
+public:
+    vector&lt;int&gt; decode(vector&lt;int&gt;&amp; encoded, int first)
+     &#123;
+         vector&lt;int&gt;ans;
+            ans.push_back(first);
+            for(int i=0;i&lt;encoded.size();i++)
+                ans.push_back(ans.back()^encoded[i]);
+            return ans;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="Python3版本"><a href="#Python3版本" class="headerlink" title="Python3版本"></a>Python3版本</h4><pre><code class="Python3">class Solution:
+    def decode(self, encoded: List[int], first: int) -&gt; List[int]:
+        res = [first]
+        for e in encoded:
+            res.append(res[-1] ^ e)
+        retur
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/06/1720-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/" data-id="cl2x411rj00009ct1henl3lol" data-title="1720-解码异或后的数组" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2021-05-03T16:51:11.848Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/04/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>ll</p>
+<p>hexo new “第二篇Hexo blog文章”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/hello-world/" data-id="cl2x411s000079ct1a1ln51v5" data-title="Hello World" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         
