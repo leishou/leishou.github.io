@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>2022数据库原理与运用习题复现 | Link Start</title><meta name="author" content="leishou"><meta name="copyright" content="leishou"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2022数据库原理与运用习题复现1.选择 181.关于事务先写日志文件，后写数据库修改 写日志文件操作：把表示这个修改的日志记录写到日志文件 写数据库操作：把对数据的修改写到数据库中  2.关于数据流图数据流图在需求分析阶段绘制  3.分布式数据库特点不包含C 数据一致性 一定程度上牺牲  来保全A 系统可用性 和P 网络分区容错性  4.索引扫描相关 选正确的一项一、 选择操作的启发式规则: 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022数据库原理与运用习题复现">
+<meta property="og:url" content="http://example.com/2022/05/28/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E8%BF%90%E7%94%A8%E4%B9%A0%E9%A2%98%E5%A4%8D%E7%8E%B0/index.html">
+<meta property="og:site_name" content="Link Start">
+<meta property="og:description" content="2022数据库原理与运用习题复现1.选择 181.关于事务先写日志文件，后写数据库修改 写日志文件操作：把表示这个修改的日志记录写到日志文件 写数据库操作：把对数据的修改写到数据库中  2.关于数据流图数据流图在需求分析阶段绘制  3.分布式数据库特点不包含C 数据一致性 一定程度上牺牲  来保全A 系统可用性 和P 网络分区容错性  4.索引扫描相关 选正确的一项一、 选择操作的启发式规则: 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-05-28T12:46:25.000Z">
+<meta property="article:modified_time" content="2022-05-28T12:41:12.764Z">
+<meta property="article:author" content="leishou">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/28/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E8%BF%90%E7%94%A8%E4%B9%A0%E9%A2%98%E5%A4%8D%E7%8E%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2022数据库原理与运用习题复现',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-28 20:41:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avator.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Link Start</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2022数据库原理与运用习题复现</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-28T12:46:25.000Z" title="发表于 2022-05-28 20:46:25">2022-05-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-28T12:41:12.764Z" title="更新于 2022-05-28 20:41:12">2022-05-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="2022数据库原理与运用习题复现"><a href="#2022数据库原理与运用习题复现" class="headerlink" title="2022数据库原理与运用习题复现"></a>2022数据库原理与运用习题复现</h1><h3 id="1-选择-18"><a href="#1-选择-18" class="headerlink" title="1.选择 18"></a>1.选择 18</h3><h5 id="1-关于事务"><a href="#1-关于事务" class="headerlink" title="1.关于事务"></a>1.关于事务</h5><pre><code>先写日志文件，后写数据库修改
+写日志文件操作：把表示这个修改的日志记录写到日志文件
+写数据库操作：把对数据的修改写到数据库中
+</code></pre>
+<h5 id="2-关于数据流图"><a href="#2-关于数据流图" class="headerlink" title="2.关于数据流图"></a>2.关于数据流图</h5><pre><code>数据流图在需求分析阶段绘制
+</code></pre>
+<h5 id="3-分布式数据库特点不包含"><a href="#3-分布式数据库特点不包含" class="headerlink" title="3.分布式数据库特点不包含"></a>3.分布式数据库特点不包含</h5><pre><code>C 数据一致性 一定程度上牺牲  来保全A 系统可用性 和P 网络分区容错性
+</code></pre>
+<h5 id="4-索引扫描相关-选正确的一项"><a href="#4-索引扫描相关-选正确的一项" class="headerlink" title="4.索引扫描相关 选正确的一项"></a>4.索引扫描相关 选正确的一项</h5><pre><code>一、 选择操作的启发式规则:
+1. 对于小关系，使用全表顺序扫描，即使选择列上有索引 
+   对于大关系，启发式规则有：
+    2. 对于选择条件是主码＝值的查询
+查询结果最多是一个元组，可以选择主码索引
+一般的RDBMS会自动建立主码索引。
+3. 对于选择条件是非主属性＝值的查询，并且选择列上有索引
+要估算查询结果的元组数目
+如果比例较小(&lt;10%)可以使用索引扫描方法
+否则还是使用全表顺4. 对于选择条件是属性上的非等值查询或者范围查询，并且选择列上有索引
+  要估算查询结果的元组数目
+如果比例较小(&lt;10%)可以使用索引扫描方法
+否则还是使用全表顺序扫描 
+5. 对于用AND连接的合取选择条件
+如果有涉及这些属性的组合索引
+优先采用组合索引扫描方法
+  如果某些属性上有一般的索引
+则可以用［例1-C4］中介绍的索引扫描方法（索引，求交）
+否则使用全表顺序扫描。
+6. 对于用OR连接的析取选择条件，一般使用全表顺序扫描
+序扫描
+4. 对于选择条件是属性上的非等值查询或者范围查询，并且选择列上有索引
+  要估算查询结果的元组数目
+如果比例较小(&lt;10%)可以使用索引扫描方法
+否则还是使用全表顺序扫描 
+5. 对于用AND连接的合取选择条件
+如果有涉及这些属性的组合索引
+优先采用组合索引扫描方法
+  如果某些属性上有一般的索引
+则可以用［例1-C4］中介绍的索引扫描方法（索引，求交）
+否则使用全表顺序扫描。
+6. 对于用OR连接的析取选择条件，一般使用全表顺序扫描
+</code></pre>
+<h5 id="5查数据"><a href="#5查数据" class="headerlink" title="5查数据"></a>5查数据</h5><pre><code>很多AND 条件那个 选项给了ABCD 选合适的建立索引
+选条件中对应的元组
+</code></pre>
+<h5 id="6查询page相关"><a href="#6查询page相关" class="headerlink" title="6查询page相关"></a>6查询page相关</h5><h5 id="7-判断题-语句是否正确"><a href="#7-判断题-语句是否正确" class="headerlink" title="7.判断题 语句是否正确"></a>7.判断题 语句是否正确</h5><pre><code>嵌套查询不能使用order by
+</code></pre>
+<h5 id="8-分布式数据库运用技术"><a href="#8-分布式数据库运用技术" class="headerlink" title="8.分布式数据库运用技术"></a>8.分布式数据库运用技术</h5><h5 id="9-数据库模式"><a href="#9-数据库模式" class="headerlink" title="9.数据库模式"></a>9.数据库模式</h5><pre><code>模式也称逻辑模式或概念模式，是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图
+</code></pre>
+<h5 id="10-所有属性都是主属性-含两个属性的码的关系模式最高"><a href="#10-所有属性都是主属性-含两个属性的码的关系模式最高" class="headerlink" title="10.所有属性都是主属性 含两个属性的码的关系模式最高"></a>10.所有属性都是主属性 含两个属性的码的关系模式最高</h5><hr>
+<h3 id="2-简答-画图"><a href="#2-简答-画图" class="headerlink" title="2.简答 画图"></a>2.简答 画图</h3><h5 id="1-事务含义及特性："><a href="#1-事务含义及特性：" class="headerlink" title="1.事务含义及特性："></a>1.事务含义及特性：</h5><pre><code>事务含义：事务是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。
+特性：原子性 一致性 隔离性 持续性/永久性
+</code></pre>
+<h5 id="2-故障分类"><a href="#2-故障分类" class="headerlink" title="2.故障分类"></a>2.故障分类</h5><pre><code>事务内部故障 系统故障 介质故障 计算机病毒
+</code></pre>
+<h5 id="3-两端锁协议含义及影响及处理办法"><a href="#3-两端锁协议含义及影响及处理办法" class="headerlink" title="3.两端锁协议含义及影响及处理办法"></a>3.两端锁协议含义及影响及处理办法</h5><pre><code>含义：在对任何数据进行读写操作前，首先要申请并获得对该数据的封锁；在释放一个封锁之后，事务不再申请和获得任何封锁 
+影响：可能发生死锁
+</code></pre>
+<h5 id="4-B-树存取结构优点"><a href="#4-B-树存取结构优点" class="headerlink" title="4.B+树存取结构优点"></a>4.B+树存取结构优点</h5><pre><code>存储数据较多 存储效率高 更新性能好 B+树层次较少 叶节点存储实际数据 从根节点到任意一个叶节点具有相同路径长度
+
+B+的特性：
+1.所有关键字都出现在叶子结点的链表中（稠密索引），且链表中的关键字恰好是有序的；不可能在非叶子结点命中；
+2.所有叶子节点都在同一个层次，无论查询哪条记录,查询时间都近乎相同.
+3.非叶子结点相当于是叶子结点的索引（稀疏索引），叶子结点相当于是存储（关键字）数据的数据层
+4.更适合文件索引系统
+</code></pre>
+<h5 id="5-插入数据-person-name-配偶-配偶是name的外键，怎么插入一条记录-mary-liya"><a href="#5-插入数据-person-name-配偶-配偶是name的外键，怎么插入一条记录-mary-liya" class="headerlink" title="5.插入数据 person(name,配偶) 配偶是name的外键，怎么插入一条记录 mary liya"></a>5.插入数据 person(name,配偶) 配偶是name的外键，怎么插入一条记录 mary liya</h5><pre><code>1.先插入mary null 
+2.后插入liya mary
+3.修改mary的配偶值
+</code></pre>
+<h5 id="6-where-order-by-having语句的执行顺序"><a href="#6-where-order-by-having语句的执行顺序" class="headerlink" title="6.where order by  having语句的执行顺序"></a>6.where order by  having语句的执行顺序</h5><h3 id="3-图相关"><a href="#3-图相关" class="headerlink" title="3.图相关"></a>3.图相关</h3><h5 id="1-连接图相关"><a href="#1-连接图相关" class="headerlink" title="1.连接图相关"></a>1.连接图相关</h5><pre><code>自然连接  条件       ÷
+</code></pre>
+<h5 id="2-日志记录相关"><a href="#2-日志记录相关" class="headerlink" title="2.日志记录相关"></a>2.日志记录相关</h5><pre><code>参照连接：https://blog.csdn.net/liyatjj/article/details/116998249
+</code></pre>
+<h5 id="3-查询优化"><a href="#3-查询优化" class="headerlink" title="3.查询优化"></a>3.查询优化</h5><pre><code>1.(2)R中A为主码,A有3层B+树索引, select from R where A=10
+2.(2)R中A为主码（R (A,B),A，B有3层B+树索引, select from R where B=10
+10000个元组 1个块能装100个元组 10%的命中率
+</code></pre>
+<hr>
+<h3 id="4-sql语句编写"><a href="#4-sql语句编写" class="headerlink" title="4.sql语句编写"></a>4.sql语句编写</h3><h5 id="（很多涉及到嵌套的查询）"><a href="#（很多涉及到嵌套的查询）" class="headerlink" title="（很多涉及到嵌套的查询）"></a>（很多涉及到嵌套的查询）</h5><pre><code>1.查询获得奖学金的xx学生的相关信息
+2.设置未获得奖学金但成绩达到过满分的同学奖学金为1000
+3.查询某专业所有同学的平均成绩
+4.建立xx视图
+</code></pre>
+<hr>
+<h3 id="5-E-R关系模式"><a href="#5-E-R关系模式" class="headerlink" title="5.E-R关系模式"></a>5.E-R关系模式</h3><h5 id="1-绘图"><a href="#1-绘图" class="headerlink" title="1.绘图"></a>1.绘图</h5><pre><code>实体：矩形
+属性：圆形
+</code></pre>
+<h5 id="2-写关系模式：区（，，，，）楼栋（，，，，）房源（，，，，）"><a href="#2-写关系模式：区（，，，，）楼栋（，，，，）房源（，，，，）" class="headerlink" title="2.写关系模式：区（，，，，）楼栋（，，，，）房源（，，，，）"></a>2.写关系模式：区（，，，，）楼栋（，，，，）房源（，，，，）</h5><hr>
+<h6 id="PS-个人问题汇总"><a href="#PS-个人问题汇总" class="headerlink" title="PS:个人问题汇总"></a>PS:个人问题汇总</h6><pre><code>2级封锁协议可以防止丢失修改和读“脏”数据。
+在2级封锁协议中，由于读完数据后即可释放S锁，所以它不能保证可重复读。
+关系模式
+</code></pre>
+<pre><code>先写日志文件为保证数据库的可恢复性，日志文件能够用来进行事务故障恢复、系统故障恢复，并能够协助后备副本进行介质故障恢复。当数据库文件毁坏后，可重新装入后援副本把数据库恢复到转储结束时刻的正确状态，再利用建立的日志文件，可以把已完成的事务进行重做处理，而对于故障发生时尚未完成的事务则进行撤消处理，这样不用运行应用程序就可把数据库恢复到故障前某一时刻的正确状态。
+</code></pre>
+<pre><code>E-R图 分E-R图的调整
+</code></pre>
+<pre><code>参照完整性：
+  若属性（或属性组）F是基本关系R的外码，它与基本关系S的主码Ks相对应（基本关系R和S不一定是不同的关系），则对于R中每个元组在F上的值必须为：
+或者取空值（F的每个属性值均为空值）
+或者等于S中某个元组的主码值
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">leishou</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/28/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E8%BF%90%E7%94%A8%E4%B9%A0%E9%A2%98%E5%A4%8D%E7%8E%B0/">http://example.com/2022/05/28/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E8%BF%90%E7%94%A8%E4%B9%A0%E9%A2%98%E5%A4%8D%E7%8E%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Link Start</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/11/2022%E7%AE%97%E6%B3%95%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2022算法考试复现</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avator.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">leishou</div><div class="author-info__description">刹那永恒</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E8%BF%90%E7%94%A8%E4%B9%A0%E9%A2%98%E5%A4%8D%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">2022数据库原理与运用习题复现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%80%89%E6%8B%A9-18"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.选择 18</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">1.关于事务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">2.关于数据流图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%89%B9%E7%82%B9%E4%B8%8D%E5%8C%85%E5%90%AB"><span class="toc-number">1.0.1.0.3.</span> <span class="toc-text">3.分布式数据库特点不包含</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E7%B4%A2%E5%BC%95%E6%89%AB%E6%8F%8F%E7%9B%B8%E5%85%B3-%E9%80%89%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%B8%80%E9%A1%B9"><span class="toc-number">1.0.1.0.4.</span> <span class="toc-text">4.索引扫描相关 选正确的一项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5%E6%9F%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">1.0.1.0.5.</span> <span class="toc-text">5查数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6%E6%9F%A5%E8%AF%A2page%E7%9B%B8%E5%85%B3"><span class="toc-number">1.0.1.0.6.</span> <span class="toc-text">6查询page相关</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E5%88%A4%E6%96%AD%E9%A2%98-%E8%AF%AD%E5%8F%A5%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE"><span class="toc-number">1.0.1.0.7.</span> <span class="toc-text">7.判断题 语句是否正确</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%90%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.0.1.0.8.</span> <span class="toc-text">8.分布式数据库运用技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.0.1.0.9.</span> <span class="toc-text">9.数据库模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-%E6%89%80%E6%9C%89%E5%B1%9E%E6%80%A7%E9%83%BD%E6%98%AF%E4%B8%BB%E5%B1%9E%E6%80%A7-%E5%90%AB%E4%B8%A4%E4%B8%AA%E5%B1%9E%E6%80%A7%E7%9A%84%E7%A0%81%E7%9A%84%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E6%9C%80%E9%AB%98"><span class="toc-number">1.0.1.0.10.</span> <span class="toc-text">10.所有属性都是主属性 含两个属性的码的关系模式最高</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%AE%80%E7%AD%94-%E7%94%BB%E5%9B%BE"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.简答 画图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%BA%8B%E5%8A%A1%E5%90%AB%E4%B9%89%E5%8F%8A%E7%89%B9%E6%80%A7%EF%BC%9A"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">1.事务含义及特性：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%95%85%E9%9A%9C%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">2.故障分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E4%B8%A4%E7%AB%AF%E9%94%81%E5%8D%8F%E8%AE%AE%E5%90%AB%E4%B9%89%E5%8F%8A%E5%BD%B1%E5%93%8D%E5%8F%8A%E5%A4%84%E7%90%86%E5%8A%9E%E6%B3%95"><span class="toc-number">1.0.2.0.3.</span> <span class="toc-text">3.两端锁协议含义及影响及处理办法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-B-%E6%A0%91%E5%AD%98%E5%8F%96%E7%BB%93%E6%9E%84%E4%BC%98%E7%82%B9"><span class="toc-number">1.0.2.0.4.</span> <span class="toc-text">4.B+树存取结构优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE-person-name-%E9%85%8D%E5%81%B6-%E9%85%8D%E5%81%B6%E6%98%AFname%E7%9A%84%E5%A4%96%E9%94%AE%EF%BC%8C%E6%80%8E%E4%B9%88%E6%8F%92%E5%85%A5%E4%B8%80%E6%9D%A1%E8%AE%B0%E5%BD%95-mary-liya"><span class="toc-number">1.0.2.0.5.</span> <span class="toc-text">5.插入数据 person(name,配偶) 配偶是name的外键，怎么插入一条记录 mary liya</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-where-order-by-having%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.0.2.0.6.</span> <span class="toc-text">6.where order by  having语句的执行顺序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%BE%E7%9B%B8%E5%85%B3"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.图相关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%BF%9E%E6%8E%A5%E5%9B%BE%E7%9B%B8%E5%85%B3"><span class="toc-number">1.0.3.0.1.</span> <span class="toc-text">1.连接图相关</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9B%B8%E5%85%B3"><span class="toc-number">1.0.3.0.2.</span> <span class="toc-text">2.日志记录相关</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96"><span class="toc-number">1.0.3.0.3.</span> <span class="toc-text">3.查询优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-sql%E8%AF%AD%E5%8F%A5%E7%BC%96%E5%86%99"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.sql语句编写</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%88%E5%BE%88%E5%A4%9A%E6%B6%89%E5%8F%8A%E5%88%B0%E5%B5%8C%E5%A5%97%E7%9A%84%E6%9F%A5%E8%AF%A2%EF%BC%89"><span class="toc-number">1.0.4.0.1.</span> <span class="toc-text">（很多涉及到嵌套的查询）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-E-R%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.0.5.</span> <span class="toc-text">5.E-R关系模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%BB%98%E5%9B%BE"><span class="toc-number">1.0.5.0.1.</span> <span class="toc-text">1.绘图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%86%99%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8C%BA%EF%BC%88%EF%BC%8C%EF%BC%8C%EF%BC%8C%EF%BC%8C%EF%BC%89%E6%A5%BC%E6%A0%8B%EF%BC%88%EF%BC%8C%EF%BC%8C%EF%BC%8C%EF%BC%8C%EF%BC%89%E6%88%BF%E6%BA%90%EF%BC%88%EF%BC%8C%EF%BC%8C%EF%BC%8C%EF%BC%8C%EF%BC%89"><span class="toc-number">1.0.5.0.2.</span> <span class="toc-text">2.写关系模式：区（，，，，）楼栋（，，，，）房源（，，，，）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#PS-%E4%B8%AA%E4%BA%BA%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-number">1.0.5.0.2.1.</span> <span class="toc-text">PS:个人问题汇总</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/28/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E8%BF%90%E7%94%A8%E4%B9%A0%E9%A2%98%E5%A4%8D%E7%8E%B0/" title="2022数据库原理与运用习题复现"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022数据库原理与运用习题复现"/></a><div class="content"><a class="title" href="/2022/05/28/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E8%BF%90%E7%94%A8%E4%B9%A0%E9%A2%98%E5%A4%8D%E7%8E%B0/" title="2022数据库原理与运用习题复现">2022数据库原理与运用习题复现</a><time datetime="2022-05-28T12:46:25.000Z" title="发表于 2022-05-28 20:46:25">2022-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/2022%E7%AE%97%E6%B3%95%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/" title="2022算法考试复现"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022算法考试复现"/></a><div class="content"><a class="title" href="/2022/05/11/2022%E7%AE%97%E6%B3%95%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/" title="2022算法考试复现">2022算法考试复现</a><time datetime="2022-05-11T15:26:39.000Z" title="发表于 2022-05-11 23:26:39">2022-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%B9%A0%E4%B8%89/" title="2022数据库实习三"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022数据库实习三"/></a><div class="content"><a class="title" href="/2022/05/11/2022%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%B9%A0%E4%B8%89/" title="2022数据库实习三">2022数据库实习三</a><time datetime="2022-05-11T15:26:39.000Z" title="发表于 2022-05-11 23:26:39">2022-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/test-1/" title="test"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"/></a><div class="content"><a class="title" href="/2022/05/11/test-1/" title="test">test</a><time datetime="2022-05-11T12:56:40.000Z" title="发表于 2022-05-11 20:56:40">2022-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/test/" title="test"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"/></a><div class="content"><a class="title" href="/2022/05/11/test/" title="test">test</a><time datetime="2022-05-11T12:52:49.000Z" title="发表于 2022-05-11 20:52:49">2022-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By leishou</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'RxTGAOvrGTQ6uJVTYdHlrmmC-gzGzoHsz',
+      appKey: '7CirUVuBjoGT6f4pyefyES00',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
